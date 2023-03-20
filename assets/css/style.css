@@ -1,0 +1,67 @@
+
+ul {
+    list-style-type: none;
+}
+
+
+a {
+    text-decoration: none; 
+}
+
+/*Prima Aside (sinistra)*/
+
+.tendina {
+    font-size: larger;
+    font-weight: bold;
+}
+
+button div {
+    border-radius: 3px;
+}
+
+.liked {
+    background: linear-gradient(135deg,#450af5,#c4efd9);
+}
+
+.iconEpisodes {
+    color: #15c255;
+}
+
+.yourEpisodes {
+    background: linear-gradient(135deg, rgba(9,85,59,1) 80%, rgba(21,194,85,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+.scrolla {
+    overflow: auto;
+    
+    height: 21rem;
+}
+
+/*Seconda Aside (destra)*/
+
+#friendsActivity {
+    overflow: auto;
+    
+    height: 21rem;
+}
+
+.friendInfo {
+    height: 1.5rem;
+    width: 13rem;
+}
+
+.friendTitle {
+    font-size: smaller;
+}
+
+.friendTime {
+    font-size: smaller;
+}
+
+.friendSong {
+    font-size: xx-small;
+}
+
+.friendCategory {
+    font-size: x-small;
+}

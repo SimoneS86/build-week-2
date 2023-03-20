@@ -10,16 +10,269 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Document</title>
   </head>
-  <body>
-    <div class="container d-flex bg-dark">
+  <body class="bg-dark">
+    <div class="d-flex bg-dark justify-content-between">
       <!--Aside di sinistra-->
-      <div></div>
+      <div class="d-flex flex-column text-white">
+        <ul>
+          <li class="dropdown">
+            <a
+              class="text-white tendina"
+              data-bs-toggle="dropdown"
+              role="button"
+              aria-expanded="false"
+              href=""
+              >...</a
+            >
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#">----</a>
+              </li>
+              <hr />
+              <li>
+                <a class="dropdown-item" href="#">----</a>
+              </li>
+              <hr />
+
+              <li>
+                <a class="dropdown-item" href="#">----</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div class="">
+          <ul>
+            <li>
+              <a class="text-white" href=""
+                ><svg
+                  role="img"
+                  height="24"
+                  width="24"
+                  aria-hidden="true"
+                  class="Svg-sc-ytk21e-0 uPxdw home-active-icon mb-2 me-3"
+                  viewBox="0 0 24 24"
+                  data-encore-id="icon"
+                >
+                  <path
+                    d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z"
+                  ></path></svg
+                ><span>Home</span></a
+              >
+            </li>
+            <li class="mt-1">
+              <a class="text-white" href="">
+                <svg
+                  role="img"
+                  height="24"
+                  width="24"
+                  aria-hidden="true"
+                  class="Svg-sc-ytk21e-0 uPxdw search-icon me-3"
+                  viewBox="0 0 24 24"
+                  data-encore-id="icon"
+                >
+                  <path
+                    d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"
+                  ></path></svg
+                ><span>Cerca</span>
+              </a>
+            </li>
+            <li class="mt-2">
+              <a class="text-white" href="">
+                <svg
+                  role="img"
+                  height="24"
+                  width="24"
+                  aria-hidden="true"
+                  class="Svg-sc-ytk21e-0 uPxdw collection-icon me-3"
+                  viewBox="0 0 24 24"
+                  data-encore-id="icon"
+                >
+                  <path
+                    d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z"
+                  ></path></svg
+                ><span>La tua libreria</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-4">
+          <ul>
+            <li>
+              <button class="d-flex bg-transparent border border-dark px-0">
+                <div class="bg-light px-2">
+                  <svg
+                    role="img"
+                    height="12"
+                    width="12"
+                    aria-hidden="true"
+                    viewBox="0 0 16 16"
+                    data-encore-id="icon"
+                    class="Svg-sc-ytk21e-0 uPxdw mb-1"
+                  >
+                    <path
+                      d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="text-white ms-2"><span>Crea playlist</span></div>
+              </button>
+            </li>
+            <li>
+              <button
+                class="d-flex bg-transparent border border-dark px-0 mt-3"
+              >
+                <div class="px-2 liked">
+                  <svg
+                    role="img"
+                    height="12"
+                    width="12"
+                    aria-hidden="true"
+                    viewBox="0 0 16 16"
+                    data-encore-id="icon"
+                    class="Svg-sc-ytk21e-0 uPxdw mb-1"
+                  >
+                    <path
+                      d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="text-white ms-2">
+                  <span>Brani che ti piacciono</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button
+                class="d-flex bg-transparent border border-dark px-0 mt-3"
+              >
+                <div class="px-2 yourEpisodes">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-bookmark-fill mb-1 iconEpisodes"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"
+                    />
+                  </svg>
+                </div>
+                <div class="text-white ms-2">
+                  <span>I tuoi episodi</span>
+                </div>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <hr class="text-secondary" />
+        <div class="scrolla">
+          <ul>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+            <li>Lorem ipsum dolor</li>
+          </ul>
+        </div>
+      </div>
       <!--Main-->
       <div></div>
       <!--Aside di destra (amici)-->
-      <div></div>
+      <div class="d-flex flex-column text-white">
+        <div class="d-flex justify-content-between">
+          <h5 class="pt-1">Attività amici</h5>
+          <div>
+            <button class="bg-transparent border border-dark">
+              <a href="">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  fill="currentColor"
+                  class="bi bi-person-plus text-white"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"
+                  />
+                </svg>
+              </a>
+            </button>
+            <button class="bg-transparent border border-dark ps-0 me-3">
+              <a href=""
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-x-lg text-white"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                  /></svg
+              ></a>
+            </button>
+          </div>
+        </div>
+        <div id="friendsActivity" class="pt-5">
+          <div class="flex">
+            <img
+              class="pe-1 me-1 float-start"
+              src="https://cdn-icons-png.flaticon.com/512/64/64572.png"
+              alt="Utente-random"
+              width="40px"
+            />
+
+            <div class="d-flex flex-column friend-container">
+              <div class="d-flex justify-content-between friendInfo">
+                <p class="friendTitle">Zio Benito</p>
+                <p class="friendTime me-2">4 ore</p>
+              </div>
+              <p class="friendSong mb-1">storia d'amore - Adriano Celentano</p>
+              <a class="text-white friendCategory" href=""
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-gear"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"
+                  />
+                  <path
+                    d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"
+                  />
+                </svg>
+                Ep III</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script
