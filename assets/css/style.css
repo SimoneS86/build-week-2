@@ -52,7 +52,6 @@ button div {
 /*Main*/
 
 .main-scrolla {
-    overflow: auto;
     height: 50rem;
 }
 
