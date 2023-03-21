@@ -1,6 +1,6 @@
 .sfondo {
     /*background-color: #121212;*/
-    background: linear-gradient(50deg, rgba(18,18,18,1) 0%, rgba(18,18,18,1) 36%, rgba(37,36,36,1) 100%);
+    background: linear-gradient(50deg, rgba(18, 18, 18, 1) 0%, rgba(18, 18, 18, 1) 36%, rgba(37, 36, 36, 1) 100%);
 }
 
 ul {
@@ -9,7 +9,7 @@ ul {
 
 
 a {
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 .darker {
@@ -28,7 +28,7 @@ button div {
 }
 
 .liked {
-    background: linear-gradient(135deg,#450af5,#c4efd9);
+    background: linear-gradient(135deg, #450af5, #c4efd9);
 }
 
 .iconEpisodes {
@@ -36,13 +36,17 @@ button div {
 }
 
 .yourEpisodes {
-    background: linear-gradient(135deg, rgba(9,85,59,1) 80%, rgba(21,194,85,1) 100%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(135deg, rgba(9, 85, 59, 1) 80%, rgba(21, 194, 85, 1) 100%, rgba(0, 212, 255, 1) 100%);
 }
 
 .scrolla {
-    overflow: auto;
-    
+    /*overflow: auto;*/
     height: 21rem;
+}
+
+.scrolla:-webkit-scrollbar-thumb {
+    background: gray;
+    border: 6px solid rgba(0, 0, 0, 0.2);
 }
 
 /*Main*/
@@ -71,7 +75,7 @@ button div {
 }
 
 .sectionBackground {
-    background: linear-gradient(8deg, rgba(20,19,19,1) 0%, rgba(20,19,19,1) 46%, rgba(43,42,42,1) 100%);
+    background: linear-gradient(8deg, rgba(20, 19, 19, 1) 0%, rgba(20, 19, 19, 1) 46%, rgba(43, 42, 42, 1) 100%);
 }
 
 .playlist {
@@ -83,9 +87,7 @@ button div {
     font-size: x-small;
 }
 
-.playlist-sizing {
-    
-}
+.playlist-sizing {}
 
 /*Seconda Aside (destra)*/
 
@@ -96,13 +98,13 @@ h5 {
 
 #friendsActivity {
     overflow: auto;
-    
+
     height: 21rem;
 }
 
 .friendInfo {
     height: 1.5rem;
-    
+
 }
 
 .friendTitle {
