@@ -122,3 +122,29 @@ h5 {
 .friendCategory {
     font-size: x-small;
 }
+
+/*------------------------ARTIST PAGE---------------------------------*/
+
+#background{
+    background-image: url(../imgs/main/eminem.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.btn-play{
+    background-color: #15c255;
+    width: fit-content;
+    border-radius: 50%;
+}
+.btn-play:hover{
+    transform: scale(1.25);
+}
+
+.btn-follow{
+    border: 1px solid white;
+    border-bottom: 2px solid white;
+}
+.btn-follow:hover{
+    transform: scale(1.05);
+}
