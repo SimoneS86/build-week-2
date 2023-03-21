@@ -84,4 +84,5 @@ a:nth-child(3){
     border: none;
     padding: 12px;
     font-size: large;
+    border-radius: 5px;
 }
