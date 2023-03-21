@@ -124,5 +124,36 @@ h5 {
 /*Main (ALBUM-PAGE)*/
 
 .album-sfondo {
-    background-color: rgb(206, 180, 28);
+    background-color: rgb(157, 137, 26);
+    padding-left: 10px;
+    padding-bottom: 150px;
+}
+
+.first-cover {
+    -webkit-box-shadow: 0px 2px 30px 13px rgba(0,0,0,0.36); 
+box-shadow: 0px 2px 30px 13px rgba(0,0,0,0.36);
+}
+
+.cover-artista {
+    border-radius: 50%;
+}
+
+.album-duration {
+    color: rgba(255, 255, 255, 0.632);
+}
+
+.album-list {
+
+}
+
+.play-button {
+    border: transparent;
+    border-radius: 50%;
+    background-color: #1ed760;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.add-playlist {
+    border: none;
 }
