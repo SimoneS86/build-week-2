@@ -45,7 +45,7 @@ button div {
     height: 21rem;
 }
 
-/*Main*/
+/*Main (HOMEPAGE)*/
 
 .main-scrolla {
     overflow: auto;
@@ -119,4 +119,10 @@ h5 {
 
 .friendCategory {
     font-size: x-small;
+}
+
+/*Main (ALBUM-PAGE)*/
+
+.album-sfondo {
+    background-color: rgb(206, 180, 28);
 }
