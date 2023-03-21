@@ -1,128 +1,220 @@
+body {
+  scrollbar-color: black; /* imposta il colore della barra di scorrimento */
+  scrollbar-width: thin; /* imposta lo spessore della barra di scorrimento */
+}
 .sfondo {
-    /*background-color: #121212;*/
-    background: linear-gradient(50deg, rgba(18,18,18,1) 0%, rgba(18,18,18,1) 36%, rgba(37,36,36,1) 100%);
+  /*background-color: #121212;*/
+  background: linear-gradient(50deg, rgba(18, 18, 18, 1) 0%, rgba(18, 18, 18, 1) 36%, rgba(37, 36, 36, 1) 100%);
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
-
 a {
-    text-decoration: none; 
+  text-decoration: none;
 }
 
 .darker {
-    background-color: rgb(14, 13, 13);
+  background-color: rgb(14, 13, 13);
 }
 
 /*Prima Aside (sinistra)*/
 
 .tendina {
-    font-size: larger;
-    font-weight: bold;
+  font-size: larger;
+  font-weight: bold;
 }
 
 button div {
-    border-radius: 3px;
+  border-radius: 3px;
 }
 
 .liked {
-    background: linear-gradient(135deg,#450af5,#c4efd9);
+  background: linear-gradient(135deg, #450af5, #c4efd9);
 }
 
 .iconEpisodes {
-    color: #15c255;
+  color: #15c255;
 }
 
 .yourEpisodes {
-    background: linear-gradient(135deg, rgba(9,85,59,1) 80%, rgba(21,194,85,1) 100%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(135deg, rgba(9, 85, 59, 1) 80%, rgba(21, 194, 85, 1) 100%, rgba(0, 212, 255, 1) 100%);
 }
 
 .scrolla {
-    overflow: auto;
-    
-    height: 21rem;
+  overflow: auto;
+
+  height: 21rem;
+}
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+  background-color: rgb(14, 13, 13);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.645);
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(14, 13, 13);
 }
 
 /*Main (HOMEPAGE)*/
 
 .main-scrolla {
-    overflow: auto;
-    height: 50rem;
+  overflow: auto;
+  height: 50rem;
 }
 
 .profilo {
-    max-width: 12rem;
+  max-width: 12rem;
 }
 
 .first-song {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 .small {
-    font-size: small;
+  font-size: small;
 }
 
 .penombra {
-    color: rgba(190, 189, 189, 0.623);
-    background-color: rgba(104, 104, 104, 0.211);
-    border-radius: 10px;
+  color: rgba(190, 189, 189, 0.623);
+  background-color: rgba(104, 104, 104, 0.211);
+  border-radius: 10px;
 }
 
 .sectionBackground {
-    background: linear-gradient(8deg, rgba(20,19,19,1) 0%, rgba(20,19,19,1) 46%, rgba(43,42,42,1) 100%);
+  background: linear-gradient(8deg, rgba(20, 19, 19, 1) 0%, rgba(20, 19, 19, 1) 46%, rgba(43, 42, 42, 1) 100%);
 }
 
 .playlist {
-    background-color: rgba(104, 104, 104, 0.211);
-    max-height: 19rem;
+  background-color: rgba(104, 104, 104, 0.211);
+  max-height: 19rem;
 }
 
 .playlist-description {
-    font-size: x-small;
+  font-size: x-small;
 }
 
 .playlist-sizing {
-    
 }
 
 /*Seconda Aside (destra)*/
 
 h5 {
-    font-size: medium;
-    font-weight: bold;
+  font-size: medium;
+  font-weight: bold;
 }
 
 #friendsActivity {
-    overflow: auto;
-    
-    height: 21rem;
+  overflow: auto;
+
+  height: 21rem;
 }
 
 .friendInfo {
-    height: 1.5rem;
-    
+  height: 1.5rem;
 }
 
 .friendTitle {
-    font-size: smaller;
+  font-size: smaller;
 }
 
 .friendTime {
-    font-size: smaller;
+  font-size: smaller;
 }
 
 .friendSong {
-    font-size: xx-small;
+  font-size: xx-small;
 }
 
 .friendCategory {
-    font-size: x-small;
+  font-size: x-small;
 }
 
 /*Main (ALBUM-PAGE)*/
 
 .album-sfondo {
-    background-color: rgb(206, 180, 28);
+  background-color: rgb(206, 180, 28);
+}
+
+/*Player*/
+.spotify-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(18, 18, 18, 1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.song-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.song-artist {
+  font-size: 14px;
+}
+
+.player-controls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#prevBtn {
+  background-image: url("prev.svg");
+}
+
+#playPauseBtn {
+  background-image: url("play.svg");
+}
+
+#playPauseBtn.playing {
+  background-image: url("pause.svg");
+}
+
+#nextBtn {
+  background-image: url("next.svg");
+}
+
+.progress-bar {
+  width: 70%;
+  height: 2px;
+  background-color: #535353;
+  margin-left: 10px;
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  background-color: #1db954;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
