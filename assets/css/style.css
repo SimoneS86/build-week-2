@@ -164,7 +164,59 @@ h5 {
 /*Main (ALBUM-PAGE)*/
 
 .album-sfondo {
-  background-color: rgb(206, 180, 28);
+  background: rgb(232, 200, 80);
+  background: linear-gradient(
+    180deg,
+    rgba(226, 194, 78, 0.9) 100px,
+    rgba(226, 194, 78, 0.763) 150px,
+    rgb(15, 15, 15) 600px
+  );
+  padding-bottom: 0;
+}
+
+.first-cover {
+  -webkit-box-shadow: 0px 2px 30px 13px rgba(0, 0, 0, 0.36);
+  box-shadow: 0px 2px 30px 13px rgba(0, 0, 0, 0.36);
+}
+
+.cover-artista {
+  border-radius: 50%;
+}
+
+.album-duration {
+  color: rgba(255, 255, 255, 0.632);
+}
+
+.album-list {
+  top: -200px;
+  background: rgb(24, 24, 24);
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.655) 45%, rgba(20, 19, 19, 0.764) 50%, rgb(24, 24, 24) 70%);
+}
+
+.play-button {
+  border: transparent;
+  border-radius: 50%;
+  background-color: #1ed760;
+
+  padding-inline: 8px;
+  padding-block: 8px;
+}
+
+.add-playlist {
+  border: none;
+}
+
+.first-part {
+  width: 65%;
+}
+
+.intestazione {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.127);
+}
+
+.album-elenco {
+  position: relative;
+  top: 13px;
 }
 
 /*Player*/
