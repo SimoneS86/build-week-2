@@ -48,17 +48,25 @@ button div {
   height: 21rem;
 }
 ::-webkit-scrollbar {
-  width: 9px;
+  width: 10px;
   height: 9px;
   background-color: rgb(14, 13, 13);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(128, 128, 128, 0.645);
+  background-color: rgb(14, 13, 13);
+  animation: scroll-color 2s;
 }
 
 ::-webkit-scrollbar-track {
   background-color: rgb(14, 13, 13);
+}
+
+.main-scrolla:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.645);
+}
+.scrolla:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.645);
 }
 
 /*Main (HOMEPAGE)*/
@@ -100,6 +108,10 @@ button div {
 }
 
 .playlist-sizing {
+}
+
+.btn.rounded-pill.px-4.text-dark {
+  background-color: #1ed760;
 }
 
 /*Seconda Aside (destra)*/
