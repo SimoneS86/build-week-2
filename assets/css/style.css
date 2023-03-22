@@ -41,9 +41,30 @@ button div {
 
 .scrolla {
     overflow: auto;
-    
-    height: 21rem;
-}
+    height: 57vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 9px;
+    background-color: rgb(14, 13, 13);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(14, 13, 13);
+    animation: scroll-color 2s;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: rgb(14, 13, 13);
+  }
+  
+  .main-scrolla:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.645);
+  }
+  .scrolla:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.645);
+  }
 
 /*Main (HOMEPAGE)*/
 
@@ -197,3 +218,114 @@ box-shadow: 0px 2px 30px 13px rgba(0,0,0,0.36);
     position: relative;
     top: 13px;
 }
+
+.spotify-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: rgb(22, 20, 20);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+  }
+  
+  .song-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .song-img {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    margin-right: 10px;
+  }
+  .song-img img {
+    object-fit: cover;
+  }
+  
+  .song-title {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+  
+  .song-artist {
+    font-size: 0.7rem;
+  }
+  
+  .cuore {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .cuore i {
+    color: white;
+  }
+  .add-playlist:focus .bi-heart {
+    color: #1ed760;
+  }
+  .progress-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .player-controls {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    color: white;
+  }
+  
+  .player-controls button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  #play-button {
+    border: transparent;
+    border-radius: 50%;
+    background-color: white;
+  }
+  
+  .progress {
+    height: 5px;
+    width: 100%;
+    background-color: gray;
+    position: relative;
+    margin-block: 15px;
+  }
+  
+  .progress:after {
+    content: "";
+    height: 100%;
+    width: 50%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .audio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+  
+  .audio-controls button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  .volume-bar__slider-container {
+    box-sizing: border-box;
+  }
+  .volume-bar {
+    align-items: center;
+  }
