@@ -156,3 +156,19 @@ h5 {
 #eminem-round{
     border-radius: 50%;
 }
+
+.heart-pill{
+    background-color: #15c255;
+    border-radius: 50%;
+    text-align: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    top: 25px;
+    right: 25px;
+}
+
+.heart-pill i{
+    font-size: 13px;
+}
