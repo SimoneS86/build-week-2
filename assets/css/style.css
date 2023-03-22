@@ -49,8 +49,10 @@ button div {
 
 .main-scrolla {
     overflow: auto;
-    height: 50rem;
+    height: 100vh;
 }
+
+
 
 .profilo {
     max-width: 12rem;
@@ -123,10 +125,29 @@ h5 {
 
 /*Main (ALBUM-PAGE)*/
 
+
 .album-sfondo {
-    background-color: rgb(157, 137, 26);
-    padding-left: 10px;
-    padding-bottom: 150px;
+    background: rgb(232,200,80);
+    background: linear-gradient(180deg, rgba(226, 194, 78, 0.9) 100px, rgba(226, 194, 78, 0.763) 150px , rgb(15, 15, 15) 600px);
+    padding-bottom: 0;
+}
+
+.control-bar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: rgba(30, 30, 30, 0.655);
+    z-index: 200;
+}
+
+.next-back {
+    background-color: rgba(20, 19, 19, 0.532);
+    opacity: 50%;
+}
+
+.next-back:focus {
+    background-color: rgba(20, 19, 19, 0.764);
+    opacity: 100%;
 }
 
 .first-cover {
@@ -135,6 +156,8 @@ box-shadow: 0px 2px 30px 13px rgba(0,0,0,0.36);
 }
 
 .cover-artista {
+    position: relative;
+    top: -4px;
     border-radius: 50%;
 }
 
@@ -143,17 +166,34 @@ box-shadow: 0px 2px 30px 13px rgba(0,0,0,0.36);
 }
 
 .album-list {
-
+    
+    /* top: -200px; */
+    background: rgb(24,24,24);
+    background: linear-gradient(180deg,rgba(30, 30, 30, 0.655) 45%, rgba(20, 19, 19, 0.764) 50%, rgb(24, 24, 24) 70%);
 }
 
 .play-button {
     border: transparent;
     border-radius: 50%;
     background-color: #1ed760;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    
+    padding-inline: 8px;
+    padding-block: 8px;
 }
 
 .add-playlist {
     border: none;
+}
+
+.first-part {
+    width: 65%;
+}
+
+.intestazione {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.127);
+}
+
+.album-elenco {
+    position: relative;
+    top: 13px;
 }

@@ -201,47 +201,51 @@
         </div>
       </div>
       <!--Main-->
-      <div class="col-8 d-flex flex-column text-white px-0 main-scrolla">
+      <div
+        class="col-8 d-flex flex-column text-white px-0 album-sfondo main-scrolla"
+      >
+        <div
+          class="d-flex pt-3 pb-3 justify-content-between align-items-center control-bar"
+        >
+          <!--header-->
+          <div class="d-flex ms-2">
+            <a class="rounded-pill text-white mx-2 next-back" href="#"
+              ><i class="bi bi-chevron-left mx-1"></i
+            ></a>
+            <a class="rounded-pill text-white mx-2 next-back" href="#"
+              ><i class="bi bi-chevron-right mx-1"></i
+            ></a>
+          </div>
+
+          <div class="dropdown profilo me-4">
+            <div
+              class="dropdown-toggle rounded-pill py-1 d-flex justify-content-center align-items-center me-0 darker"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              role="button"
+            >
+              <img
+                class="rounded-pill me-2"
+                src="assets/imgs/main/image-12.jpg"
+                width="10%"
+              />Daniele Rossi
+            </div>
+            <ul class="dropdown-menu bg-secondary">
+              <li><a class="dropdown-item" href="#">Account</a></li>
+              <li><a class="dropdown-item" href="#">Profilo</a></li>
+              <li><a class="dropdown-item" href="#">Assistenza</a></li>
+              <li><a class="dropdown-item" href="#">Download</a></li>
+              <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+            </ul>
+          </div>
+        </div>
         <!--header-->
 
-        <section class="container mb-2 pb-3 px-0">
+        <section id="album" class="container px-0 main-scrolla">
           <!--Viola feat.Salmo-->
           <!--lo sfondo di questa section è più scuro-->
-          <div class="album-sfondo">
-            <div class="d-flex pt-3 justify-content-between align-items-center">
-              <!--header-->
-              <div class="d-flex ms-2">
-                <a class="rounded-pill text-white mx-2 darker" href="#"
-                  ><i class="bi bi-chevron-left mx-1"></i
-                ></a>
-                <a class="rounded-pill text-white mx-2 darker" href="#"
-                  ><i class="bi bi-chevron-right mx-1"></i
-                ></a>
-              </div>
-
-              <div class="dropdown profilo me-4">
-                <div
-                  class="dropdown-toggle rounded-pill py-1 d-flex justify-content-center align-items-center me-0 darker"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  role="button"
-                >
-                  <img
-                    class="rounded-pill me-2"
-                    src="assets/imgs/main/image-12.jpg"
-                    width="10%"
-                  />Daniele Rossi
-                </div>
-                <ul class="dropdown-menu bg-secondary">
-                  <li><a class="dropdown-item" href="#">Account</a></li>
-                  <li><a class="dropdown-item" href="#">Profilo</a></li>
-                  <li><a class="dropdown-item" href="#">Assistenza</a></li>
-                  <li><a class="dropdown-item" href="#">Download</a></li>
-                  <li><a class="dropdown-item" href="#">Impostazioni</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="row align-items-end mx-1 py-3">
+          <div>
+            <div class="row align-items-end mx-3 py-3">
               <div class="col-3">
                 <img
                   class="first-song first-cover"
@@ -271,12 +275,12 @@
             </div>
           </div>
           <div class="album-list">
-            <div>
+            <div class="container pt-3">
               <button
                 data-testid="play-button"
                 aria-label="Riproduci Rock Classics"
                 data-encore-id="buttonPrimary"
-                class="Button-sc-qlcn5g-0 eHhJDl play-button"
+                class="Button-sc-qlcn5g-0 eHhJDl play-button ms-3"
               >
                 <span
                   class="ButtonInner-sc-14ud5tc-0 dpREpp encore-bright-accent-set"
@@ -290,7 +294,7 @@
                       aria-hidden="true"
                       viewBox="0 0 24 24"
                       data-encore-id="icon"
-                      class="Svg-sc-ytk21e-0 uPxdw"
+                      class="Svg-sc-ytk21e-0 uPxdw p-1"
                     >
                       <path
                         d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
@@ -302,7 +306,7 @@
                 role="switch"
                 aria-checked="false"
                 aria-label="Salva in La tua libreria"
-                class="bg-transparent add-playlist"
+                class="bg-transparent add-playlist ms-2"
                 data-testid="add-button"
               >
                 <svg
@@ -322,9 +326,29 @@
               </button>
               <button
                 type="button"
+                aria-label="Scarica album"
+                aria-checked="false"
+                class="bg-transparent text-white add-playlist ms-1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="26"
+                  fill="currentColor"
+                  class="bi bi-arrow-down-circle"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
                 aria-haspopup="menu"
                 aria-label="Altre opzioni per Rock Classics"
-                class="bg-transparent add-playlist"
+                class="bg-transparent add-playlist ms-1"
                 data-testid="more-button"
                 aria-expanded="false"
               >
@@ -343,6 +367,238 @@
                   ></path>
                 </svg>
               </button>
+            </div>
+            <div class="container mt-4 intestazione">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p>#</p>
+                    <p class="ms-3 small">TITOLO</p>
+                  </div>
+                  <div><p class="small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    fill="currentColor"
+                    class="bi bi-clock"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
+                    />
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container mt-3">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">1</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">2</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">3</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">4</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">5</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">6</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">7</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">7</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">7</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">7</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">7</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">7</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
