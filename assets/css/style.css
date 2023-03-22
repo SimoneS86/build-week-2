@@ -265,7 +265,9 @@ h5 {
 .heart-pill i {
   font-size: 13px;
 }
-
+.giancarlo {
+  box-sizing: border-box;
+}
 /*Player*/
 
 .spotify-player {
