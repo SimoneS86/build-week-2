@@ -73,7 +73,9 @@ button div {
     height: 100vh;
 }
 
-
+.menu {
+    background-color: rgb(43, 43, 43);
+}
 
 .profilo {
     max-width: 12rem;
