@@ -128,6 +128,9 @@ button div {
 .btn.rounded-pill.px-4.text-dark {
   background-color: #1ed760;
 }
+.menu {
+  background-color: rgb(43, 43, 43);
+}
 
 /*Seconda Aside (destra)*/
 
