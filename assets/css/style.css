@@ -121,6 +121,10 @@ button div {
   max-height: 19rem;
 }
 
+.playlist:hover {
+  background-color: rgba(133, 133, 133, 0.241);
+}
+
 .playlist-description {
   font-size: x-small;
 }
@@ -208,6 +212,14 @@ h5 {
 
 .add-playlist {
   border: none;
+}
+
+.selected:hover {
+  background-color: rgba(217, 217, 217, 0.36);
+}
+
+.selected a:hover {
+  color: white;
 }
 
 .first-part {
