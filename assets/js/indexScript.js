@@ -1,24 +1,24 @@
-const audio = document.getElementById("myAudio");
-const playPauseBtn = document.getElementById("playPauseBtn");
-let isPlaying = false;
+// const audio = document.getElementById("myAudio");
+// const playPauseBtn = document.getElementById("playPauseBtn");
+// let isPlaying = false;
 
-playPauseBtn.addEventListener("click", () => {
-  if (isPlaying) {
-    audio.pause();
-    isPlaying = false;
-    playPauseBtn.classList.remove("playing");
-  } else {
-    audio.play();
-    isPlaying = true;
-    playPauseBtn.classList.add("playing");
-  }
-});
+// playPauseBtn.addEventListener("click", () => {
+//   if (isPlaying) {
+//     audio.pause();
+//     isPlaying = false;
+//     playPauseBtn.classList.remove("playing");
+//   } else {
+//     audio.play();
+//     isPlaying = true;
+//     playPauseBtn.classList.add("playing");
+//   }
+// });
 
-audio.addEventListener("timeupdate", () => {
-  const progress = audio.currentTime / audio.duration;
-  const progressBar = document.querySelector(".progress");
-  progressBar.style.width = `${progress * 100}%`;
-});
+// audio.addEventListener("timeupdate", () => {
+//   const progress = audio.currentTime / audio.duration;
+//   const progressBar = document.querySelector(".progress");
+//   progressBar.style.width = `${progress * 100}%`;
+// });
 
 // const audioPlayer = document.getElementById("audio-player");
 // const playPauseButton = document.getElementById("play-pause-button");
