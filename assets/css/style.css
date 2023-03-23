@@ -57,7 +57,6 @@ button div {
 
 ::-webkit-scrollbar-thumb {
   background-color: rgb(14, 13, 13);
-  animation: scroll-color 2s;
 }
 
 ::-webkit-scrollbar-track {
@@ -374,6 +373,9 @@ h5 {
   position: absolute;
   top: 0;
   left: 0;
+}
+input[type="range"] {
+  accent-color: rgba(255, 255, 255, 0.438);
 }
 
 .audio-controls {
