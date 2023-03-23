@@ -237,11 +237,16 @@ h5 {
 
 /* main artist */
 
-#background {
-  background-image: url(../imgs/main/eminem.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* overflow: hidden; */
+.background {
+  object-position: center top;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+  height: 40vh;
+}
+
+.box{
+  bottom: 40px;
 }
 
 .btn-play {
