@@ -15,12 +15,15 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Home</title>
+    <title>Album</title>
   </head>
   <body class="sfondo">
     <div class="row m-0">
       <!--Aside di sinistra-->
-      <div class="col-2 d-flex flex-column album-duration px-0 darker">
+      <!--Display none fino a lg-->
+      <div
+        class="d-none d-md-flex col-md-3 col-lg-2 d-flex flex-column text-white px-0 darker"
+      >
         <ul>
           <li class="dropdown">
             <a
@@ -109,11 +112,11 @@
               <button
                 class="d-flex bg-transparent border border-dark px-0 small"
               >
-                <div class="bg-light overflow-hidden">
+                <div class="bg-light px-2">
                   <svg
                     role="img"
-                    height="12"
-                    width="20"
+                    height="10"
+                    width="6"
                     aria-hidden="true"
                     viewBox="0 0 16 16"
                     data-encore-id="icon"
@@ -137,7 +140,7 @@
                   <svg
                     role="img"
                     height="10"
-                    width="4"
+                    width="6"
                     aria-hidden="true"
                     viewBox="0 0 16 16"
                     data-encore-id="icon"
@@ -161,7 +164,7 @@
                 <div class="px-2 yourEpisodes">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="4"
+                    width="8"
                     height="12"
                     fill="currentColor"
                     class="bi bi-bookmark-fill mb-1 iconEpisodes"
@@ -181,58 +184,7 @@
         </div>
         <hr class="text-secondary" />
         <div class="scrolla small">
-          <ul>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
-            <li>Lorem ipsum dolor</li>
+          <ul class="album-duration">
             <li>Lorem ipsum dolor</li>
             <li>Lorem ipsum dolor</li>
             <li>Lorem ipsum dolor</li>
@@ -254,9 +206,11 @@
         </div>
       </div>
       <!--Main-->
-      <div class="col-8 d-flex flex-column text-white px-0 main-scrolla">
+      <div
+        class="d-flex flex-column text-white px-0 album-sfondo main-scrolla col-12 col-md-9 col-lg-8"
+      >
         <div
-          class="d-flex py-3 justify-content-between align-items-center control-bar"
+          class="d-flex pt-3 pb-3 justify-content-between align-items-center control-bar"
         >
           <!--header-->
           <div class="d-flex ms-2">
@@ -292,565 +246,423 @@
         </div>
         <!--header-->
 
-        <section class="container mb-2 py-3">
+        <section id="album" class="container px-0">
           <!--Viola feat.Salmo-->
           <!--lo sfondo di questa section è più scuro-->
-          <div class="row align-items-center sectionBackground mx-1 py-3">
-            <div class="col-3">
-              <img
-                class="first-song"
-                src="assets/imgs/main/cover-viola.jpg"
-                width="100%"
-              />
-            </div>
-            <div class="col-9">
-              <div class="d-flex justify-content-between">
-                <p class="fw-bold small">ALBUM</p>
-                <a class="text-decoration-none mx-3" href="#"
-                  ><p class="fw-bold px-3 penombra small">
-                    NASCONDI ANNUNCI
-                  </p></a
-                >
+          <div>
+            <div class="row align-items-end mx-3 py-3">
+              <div class="col-3">
+                <img
+                  class="first-song first-cover"
+                  src="assets/imgs/main/image-1.jpg"
+                  width="100%"
+                />
               </div>
-              <h3 class="fw-bold display-5">VIOLA (feat. Salmo)</h3>
-              <p class="">Fedez, Salmo</p>
-              <p class="">Ascolta il nuovo singolo di Fedez e Salmo!</p>
-              <div class="d-flex align-items-center">
-                <a
-                  href="https://open.spotify.com/album/4QzGtuqMCLDo8dbyKfbLeC?highlight=spotify:track:6UMOpKOam549hPEhpLtS9L"
-                  ><button
-                    type="button"
-                    class="btn rounded-pill px-4 text-dark"
-                  >
-                    Play
-                  </button></a
+              <div class="col-9 flex-column align-items-end">
+                <div class="mt-5">
+                  <p class="fw-bold small mb-0">ALBUM</p>
+                </div>
+                <h3 class="fw-bold display-5">VIOLA (feat. Salmo)</h3>
+                <div class="d-flex mt-5 align-items-center">
+                  <img
+                    src="assets/imgs/main/image-6.jpg"
+                    alt="copertina-artista"
+                    width="4%"
+                    height="4%"
+                    class="cover-artista me-2"
+                  />
+                  <p class="small fw-bold mb-0">
+                    <a class="text-white" href="artist.html">Nome artista</a>
+                    <span>-</span> anno <span>-</span> N-brani,
+                    <span class="album-duration">durata totale.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="album-list">
+            <div class="container pt-3">
+              <button
+                data-testid="play-button"
+                aria-label="Riproduci Rock Classics"
+                data-encore-id="buttonPrimary"
+                class="Button-sc-qlcn5g-0 eHhJDl play-button ms-3"
+              >
+                <span
+                  class="ButtonInner-sc-14ud5tc-0 dpREpp encore-bright-accent-set"
+                  ><span
+                    aria-hidden="true"
+                    class="IconWrapper__Wrapper-sc-1hf1hjl-0 fSnHJ"
+                    ><svg
+                      role="img"
+                      height="28"
+                      width="28"
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      data-encore-id="icon"
+                      class="Svg-sc-ytk21e-0 uPxdw p-1"
+                    >
+                      <path
+                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"
+                      ></path></svg></span
+                ></span>
+              </button>
+              <button
+                type="button"
+                role="switch"
+                aria-checked="false"
+                aria-label="Salva in La tua libreria"
+                class="bg-transparent add-playlist ms-2"
+                data-testid="add-button"
+              >
+                <svg
+                  role="img"
+                  height="24"
+                  width="26"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  data-encore-id="icon"
+                  class="Svg-sc-ytk21e-0 uPxdw"
+                  fill="white"
                 >
-                <a
-                  ><button
-                    type="button"
-                    class="btn btn-dark border border-light rounded-pill px-4 mx-3"
-                  >
-                    Salva
-                  </button></a
+                  <path
+                    d="M5.21 1.57a6.757 6.757 0 0 1 6.708 1.545.124.124 0 0 0 .165 0 6.741 6.741 0 0 1 5.715-1.78l.004.001a6.802 6.802 0 0 1 5.571 5.376v.003a6.689 6.689 0 0 1-1.49 5.655l-7.954 9.48a2.518 2.518 0 0 1-3.857 0L2.12 12.37A6.683 6.683 0 0 1 .627 6.714 6.757 6.757 0 0 1 5.21 1.57zm3.12 1.803a4.757 4.757 0 0 0-5.74 3.725l-.001.002a4.684 4.684 0 0 0 1.049 3.969l.009.01 7.958 9.485a.518.518 0 0 0 .79 0l7.968-9.495a4.688 4.688 0 0 0 1.049-3.965 4.803 4.803 0 0 0-3.931-3.794 4.74 4.74 0 0 0-4.023 1.256l-.008.008a2.123 2.123 0 0 1-2.9 0l-.007-.007a4.757 4.757 0 0 0-2.214-1.194z"
+                  ></path>
+                </svg>
+              </button>
+              <button
+                type="button"
+                aria-label="Scarica album"
+                aria-checked="false"
+                class="bg-transparent text-white add-playlist ms-1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="26"
+                  fill="currentColor"
+                  class="bi bi-arrow-down-circle"
+                  viewBox="0 0 16 16"
                 >
-                <button
-                  type="button"
-                  aria-haspopup="menu"
-                  aria-label="Altre opzioni per Rock Classics"
-                  class="bg-transparent add-playlist ms-1"
-                  data-testid="more-button"
-                  aria-expanded="false"
-                >
-                  <ul class="ps-0">
-                    <li class="dropdown mt-3">
-                      <a
-                        class="text-white"
-                        data-bs-toggle="dropdown"
-                        role="button"
-                        aria-expanded="false"
-                        href=""
+                  <path
+                    fill-rule="evenodd"
+                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
+                aria-haspopup="menu"
+                aria-label="Altre opzioni per Rock Classics"
+                class="bg-transparent add-playlist ms-1"
+                data-testid="more-button"
+                aria-expanded="false"
+              >
+                <ul class="ps-0">
+                  <li class="dropdown">
+                    <a
+                      class="text-white"
+                      data-bs-toggle="dropdown"
+                      role="button"
+                      aria-expanded="false"
+                      href=""
+                    >
+                      <svg
+                        role="img"
+                        height="24"
+                        width="24"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-encore-id="icon"
+                        class="Svg-sc-ytk21e-0 uPxdw"
+                        fill="white"
                       >
-                        <svg
-                          role="img"
-                          height="24"
-                          width="24"
-                          aria-hidden="true"
-                          viewBox="0 0 24 24"
-                          data-encore-id="icon"
-                          class="Svg-sc-ytk21e-0 uPxdw"
-                          fill="white"
+                        <path
+                          d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
+                        ></path></svg
+                    ></a>
+                    <ul class="dropdown-menu menu p-0">
+                      <li>
+                        <a class="dropdown-item text-white" href="#"
+                          >Vai a Radio dell'artista</a
                         >
-                          <path
-                            d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
-                          ></path></svg
-                      ></a>
-                      <ul class="dropdown-menu menu p-0">
-                        <li>
-                          <a class="dropdown-item text-white" href="#"
-                            >Vai a Radio dell'artista</a
-                          >
-                        </li>
-                        <hr class="my-2 text-secondary" />
-                        <li>
-                          <a class="dropdown-item text-white" href="#"
-                            >Aggiungi a La tua libreria</a
-                          >
-                        </li>
-                        <li>
-                          <a class="dropdown-item text-white" href="#"
-                            >Aggiungi alla Playlist</a
-                          >
-                        </li>
-                        <hr class="my-2 text-secondary" />
+                      </li>
+                      <hr class="my-2 text-secondary" />
+                      <li>
+                        <a class="dropdown-item text-white" href="#"
+                          >Aggiungi a La tua libreria</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item text-white" href="#"
+                          >Aggiungi alla Playlist</a
+                        >
+                      </li>
+                      <hr class="my-2 text-secondary" />
 
-                        <li>
-                          <a class="dropdown-item text-white" href="#"
-                            >Condividi</a
-                          >
-                        </li>
-                        <hr class="my-2 text-secondary" />
+                      <li>
+                        <a class="dropdown-item text-white" href="#"
+                          >Condividi</a
+                        >
+                      </li>
+                      <hr class="my-2 text-secondary" />
 
-                        <li>
-                          <a class="dropdown-item text-white" href="#"
-                            >Apri con l'app per descktop</a
-                          >
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </button>
+                      <li>
+                        <a class="dropdown-item text-white" href="#"
+                          >Apri con l'app per descktop</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </button>
+            </div>
+            <div class="container mt-4 intestazione">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-duration">#</p>
+                    <p class="ms-3 small album-duration">TITOLO</p>
+                  </div>
+                  <div><p class="small album-duration">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    fill="currentColor"
+                    class="bi bi-clock"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"
+                    />
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container selected mt-3">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco album-duration">1</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small">
+                        <a class="album-duration" href="artist.html">Artista</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="album-elenco small album-duration">
+                      RIPRODUZIONI
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <p class="album-elenco small album-duration">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container selected">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">2</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small album-duration">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container selected">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">3</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small album-duration">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container selected">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">4</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small album-duration">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container selected">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">5</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small album-duration">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container selected">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">6</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small album-duration">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container selected">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">7</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small album-duration">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container selected">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">7</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small album-duration">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container selected">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">7</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small album-duration">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container selected">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">7</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small album-duration">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container selected">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">7</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small album-duration">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
+              </div>
+            </div>
+            <div role="button" class="container selected">
+              <div class="d-flex justify-content-between px-4 mx-2">
+                <div class="d-flex justify-content-between first-part">
+                  <div class="d-flex">
+                    <p class="album-elenco">7</p>
+                    <div class="d-flex flex-column ms-3">
+                      <h5 class="">Titolo</h5>
+                      <p class="small album-duration">Artista</p>
+                    </div>
+                  </div>
+                  <div><p class="album-elenco small">RIPRODUZIONI</p></div>
+                </div>
+                <div>
+                  <p class="album-elenco small">durata</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <!--Viola feat.Salmo-->
-        <!--lo sfondo di questa section è più scuro-->
 
-        <div class="mx-3 mb-5">
-          <!--Buonasera-->
-          <h3 class="fw-bold mb-4">Buonasera</h3>
-
-          <div class="row">
-            <div class="mb-3 d-flex col-xs-2 col-md-4">
-              <img
-                class="rounded-start"
-                src="assets/imgs/search/image-45.png"
-                width="60"
-              />
-              <div
-                class="pe-2 rounded-end d-flex align-items-center w-100 playlist"
-              >
-                <h6 class="ms-3 py-3 small">Daily Drive</h6>
-              </div>
-            </div>
-            <div class="mb-3 d-flex col-xs-2 col-md-4">
-              <img
-                class="rounded-start"
-                src="assets/imgs/search/image-28.jpg"
-                width="60"
-              />
-              <div
-                class="pe-2 rounded-end d-flex align-items-center w-100 playlist"
-              >
-                <h6 class="ms-3 py-3 small">Afro Hits</h6>
-              </div>
-            </div>
-            <div class="mb-3 d-flex col-xs-2 col-md-4">
-              <img
-                class="rounded-start"
-                src="assets/imgs/search/image-17.jpg"
-                width="60"
-              />
-              <div
-                class="pe-2 rounded-end d-flex align-items-center w-100 playlist"
-              >
-                <h6 class="ms-3 py-3 small">Stress Relief</h6>
-              </div>
-            </div>
-            <div class="mb-3 d-flex col-xs-2 col-md-4">
-              <img
-                class="rounded-start"
-                src="assets/imgs/search/image-10.jpg"
-                width="60"
-              />
-              <div
-                class="pe-2 rounded-end d-flex align-items-center w-100 playlist"
-              >
-                <h6 class="ms-3 py-3 small">Lo-Fi Beats</h6>
-              </div>
-            </div>
-            <div class="mb-3 d-flex col-xs-2 col-md-4">
-              <img
-                class="rounded-start"
-                src="assets/imgs/search/image-11.jpg"
-                width="60"
-              />
-              <div
-                class="pe-2 rounded-end d-flex align-items-center w-100 playlist"
-              >
-                <h6 class="ms-3 py-3 small">Song To sing in the car</h6>
-              </div>
-            </div>
-            <div class="mb-3 d-flex col-xs-2 col-md-4">
-              <img
-                class="rounded-start"
-                src="assets/imgs/search/image-32.jpg"
-                width="60"
-              />
-              <div
-                class="pe-2 rounded-end d-flex align-items-center w-100 playlist"
-              >
-                <h6 class="ms-3 py-3 small">Nu-Funk</h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--Buonasera-->
-
-        <div class="container mb-5">
-          <!--Altro-->
-          <div class="d-flex justify-content-between">
-            <h3 class="fw-bold fs-5 mx-2 mb-4">Altro di ciò che ti piace</h3>
-            <p class="small me-3 fw-bold">
-              <a class="text-secondary" href=""> VISUALIZZA TUTTO</a>
-            </p>
-          </div>
-          <div class="row justify-content-between mx-1 px-2">
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/main/image-19.jpg"
-                class="card-img-top rounded p-2"
-                width="100%"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">Street Culto</h5>
-                <p class="mt-3 mb-0 album-duration playlist-description">
-                  La casa dello street rap italiano. Aggiornata ogni venerdì.
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/search/image-26.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">New Music Friday</h5>
-                <p class="mt-3 mb-0 album-duration playlist-description">
-                  Tutte le migliori nuove uscite di questa settimana!
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/search/image-49.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">Rap Caviar</h5>
-                <p class="mt-3 mb-0 pb-3 album-duration playlist-description">
-                  Music From: Lil Tjay & 6lack
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/main/image-18.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text">Estate 2022</h5>
-                <p class="mt-3 mb-0 pb-3 album-duration playlist-description">
-                  Le hit dell'estate 2022, tutte da cantare! 🎤🍹⛱
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 playlist">
-              <img
-                src="assets/imgs/search/image-51.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body">
-                <h5 class="card-text">Mood Booster</h5>
-                <p class="mt-3 album-duration playlist-description">
-                  Inizia la giornata con lo spirito giusto
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container mb-5">
-          <!--Altro-->
-          <div class="d-flex justify-content-between">
-            <h3 class="fw-bold fs-5 mx-2 mb-4">Altro di ciò che ti piace</h3>
-            <p class="small me-3 fw-bold">
-              <a class="text-secondary" href=""> VISUALIZZA TUTTO</a>
-            </p>
-          </div>
-          <div class="row justify-content-between mx-1 px-2">
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/main/image-19.jpg"
-                class="card-img-top rounded p-2"
-                width="100%"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">Street Culto</h5>
-                <p class="mt-3 mb-0 album-duration playlist-description">
-                  La casa dello street rap italiano. Aggiornata ogni venerdì.
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/search/image-26.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">New Music Friday</h5>
-                <p class="mt-3 mb-0 album-duration playlist-description">
-                  Tutte le migliori nuove uscite di questa settimana!
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/search/image-49.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">Rap Caviar</h5>
-                <p class="mt-3 mb-0 pb-3 album-duration playlist-description">
-                  Music From: Lil Tjay & 6lack
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/main/image-18.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text">Estate 2022</h5>
-                <p class="mt-3 mb-0 pb-3 album-duration playlist-description">
-                  Le hit dell'estate 2022, tutte da cantare! 🎤🍹⛱
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 playlist">
-              <img
-                src="assets/imgs/search/image-51.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body">
-                <h5 class="card-text">Mood Booster</h5>
-                <p class="mt-3 album-duration playlist-description">
-                  Inizia la giornata con lo spirito giusto
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container mb-5">
-          <!--Altro-->
-          <div class="d-flex justify-content-between">
-            <h3 class="fw-bold fs-5 mx-2 mb-4">Altro di ciò che ti piace</h3>
-            <p class="small me-3 fw-bold">
-              <a class="text-secondary" href=""> VISUALIZZA TUTTO</a>
-            </p>
-          </div>
-          <div class="row justify-content-between mx-1 px-2">
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/main/image-19.jpg"
-                class="card-img-top rounded p-2"
-                width="100%"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">Street Culto</h5>
-                <p class="mt-3 mb-0 album-duration playlist-description">
-                  La casa dello street rap italiano. Aggiornata ogni venerdì.
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/search/image-26.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">New Music Friday</h5>
-                <p class="mt-3 mb-0 album-duration playlist-description">
-                  Tutte le migliori nuove uscite di questa settimana!
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/search/image-49.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">Rap Caviar</h5>
-                <p class="mt-3 mb-0 pb-3 album-duration playlist-description">
-                  Music From: Lil Tjay & 6lack
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/main/image-18.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text">Estate 2022</h5>
-                <p class="mt-3 mb-0 pb-3 album-duration playlist-description">
-                  Le hit dell'estate 2022, tutte da cantare! 🎤🍹⛱
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 playlist">
-              <img
-                src="assets/imgs/search/image-51.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body">
-                <h5 class="card-text">Mood Booster</h5>
-                <p class="mt-3 album-duration playlist-description">
-                  Inizia la giornata con lo spirito giusto
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container mb-5">
-          <!--Altro-->
-          <div class="d-flex justify-content-between">
-            <h3 class="fw-bold fs-5 mx-2 mb-4">Altro di ciò che ti piace</h3>
-            <p class="small me-3 fw-bold">
-              <a class="text-secondary" href=""> VISUALIZZA TUTTO</a>
-            </p>
-          </div>
-          <div class="row justify-content-between mx-1 px-2">
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/main/image-19.jpg"
-                class="card-img-top rounded p-2"
-                width="100%"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">Street Culto</h5>
-                <p class="mt-3 mb-0 album-duration playlist-description">
-                  La casa dello street rap italiano. Aggiornata ogni venerdì.
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/search/image-26.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">New Music Friday</h5>
-                <p class="mt-3 mb-0 album-duration playlist-description">
-                  Tutte le migliori nuove uscite di questa settimana!
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/search/image-49.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">Rap Caviar</h5>
-                <p class="mt-3 mb-0 pb-3 album-duration playlist-description">
-                  Music From: Lil Tjay & 6lack
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/main/image-18.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text">Estate 2022</h5>
-                <p class="mt-3 mb-0 pb-3 album-duration playlist-description">
-                  Le hit dell'estate 2022, tutte da cantare! 🎤🍹⛱
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 playlist">
-              <img
-                src="assets/imgs/search/image-51.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body">
-                <h5 class="card-text">Mood Booster</h5>
-                <p class="mt-3 album-duration playlist-description">
-                  Inizia la giornata con lo spirito giusto
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container mb-5">
-          <!--Altro-->
-          <div class="d-flex justify-content-between">
-            <h3 class="fw-bold fs-5 mx-2 mb-4">Altro di ciò che ti piace</h3>
-            <p class="small me-3 fw-bold">
-              <a class="text-secondary" href=""> VISUALIZZA TUTTO</a>
-            </p>
-          </div>
-          <div class="row justify-content-between mx-1 px-2">
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/main/image-19.jpg"
-                class="card-img-top rounded p-2"
-                width="100%"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">Street Culto</h5>
-                <p class="mt-3 mb-0 album-duration playlist-description">
-                  La casa dello street rap italiano. Aggiornata ogni venerdì.
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/search/image-26.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">New Music Friday</h5>
-                <p class="mt-3 mb-0 album-duration playlist-description">
-                  Tutte le migliori nuove uscite di questa settimana!
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/search/image-49.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text small">Rap Caviar</h5>
-                <p class="mt-3 mb-0 pb-3 album-duration playlist-description">
-                  Music From: Lil Tjay & 6lack
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 pb-2 playlist">
-              <img
-                src="assets/imgs/main/image-18.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body pb-0">
-                <h5 class="card-text">Estate 2022</h5>
-                <p class="mt-3 mb-0 pb-3 album-duration playlist-description">
-                  Le hit dell'estate 2022, tutte da cantare! 🎤🍹⛱
-                </p>
-              </div>
-            </div>
-            <div class="col-2 flex-grow-1 mx-2 card px-0 playlist">
-              <img
-                src="assets/imgs/search/image-51.jpg"
-                class="card-img-top rounded p-2"
-              />
-              <div class="card-body">
-                <h5 class="card-text">Mood Booster</h5>
-                <p class="mt-3 album-duration playlist-description">
-                  Inizia la giornata con lo spirito giusto
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
         <!--Altro-->
       </div>
       <!--Aside di destra (amici)-->
-      <div class="col-2 d-flex flex-column text-white pe-0 darker">
+      <div class="col-2 d-none d-lg-flex flex-column text-white pe-0 darker">
         <div class="d-flex justify-content-between">
           <h5 class="pt-1">Attività amici</h5>
           <div>
@@ -892,7 +704,7 @@
           </div>
         </div>
         <div id="friendsActivity" class="pt-5">
-          <div class="flex">
+          <div class="flex album-duration">
             <img
               class="me-1 float-start"
               src="https://cdn-icons-png.flaticon.com/512/64/64572.png"
@@ -900,13 +712,13 @@
               width="40px"
             />
 
-            <div class="d-flex flex-column friend-container album-duration">
+            <div class="d-flex flex-column friend-container">
               <div class="d-flex justify-content-between friendInfo">
                 <p class="friendTitle">Zio Benito</p>
                 <p class="friendTime me-4 pe-2">4 ore</p>
               </div>
               <p class="friendSong mb-1">storia d'amore - Adriano Celentano</p>
-              <a class="album-duration friendCategory" href=""
+              <a class="friendCategory album-duration" href="#"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -929,7 +741,6 @@
         </div>
       </div>
     </div>
-
     <audio id="myAudio" src="path/to/audio/file.mp3"></audio>
 
     <div class="spotify-player">
@@ -1227,6 +1038,5 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/js/indexScript.js"></script>
   </body>
 </html>

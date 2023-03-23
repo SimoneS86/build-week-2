@@ -1,170 +1,402 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1.400&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1.400&display=swap"); */
 
-body{
-    font-family: "Roboto", sans-serif;
+body {
+  /* font-family: "Roboto", sans-serif; */
+  padding-bottom: 95px;
 }
 
 .sfondo {
-    /*background-color: #121212;*/
-    background: linear-gradient(50deg, rgba(18, 18, 18, 1) 0%, rgba(18, 18, 18, 1) 36%, rgba(37, 36, 36, 1) 100%);
+  /*background-color: #121212;*/
+  background: linear-gradient(50deg, rgba(18, 18, 18, 1) 0%, rgba(18, 18, 18, 1) 36%, rgba(37, 36, 36, 1) 100%);
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
-
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .darker {
-    background-color: rgb(14, 13, 13);
+  background-color: rgb(14, 13, 13);
 }
 
 /*Prima Aside (sinistra)*/
 
 .tendina {
-    font-size: larger;
-    font-weight: bold;
+  font-size: larger;
+  font-weight: bold;
 }
 
 button div {
-    border-radius: 3px;
+  border-radius: 3px;
 }
 
 .liked {
-    background: linear-gradient(135deg, #450af5, #c4efd9);
+  background: linear-gradient(135deg, #450af5, #c4efd9);
 }
 
 .iconEpisodes {
-    color: #15c255;
+  color: #15c255;
 }
 
 .yourEpisodes {
-    background: linear-gradient(135deg, rgba(9, 85, 59, 1) 80%, rgba(21, 194, 85, 1) 100%, rgba(0, 212, 255, 1) 100%);
+  background: linear-gradient(135deg, rgba(9, 85, 59, 1) 80%, rgba(21, 194, 85, 1) 100%, rgba(0, 212, 255, 1) 100%);
 }
 
 .scrolla {
-    height: 100vh;
+  overflow: auto;
+  height: 57vh;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 9px;
+  background-color: rgb(14, 13, 13);
 }
 
-.scrolla:-webkit-scrollbar-thumb {
-    background: gray;
-    border: 6px solid rgba(0, 0, 0, 0.2);
+::-webkit-scrollbar-thumb {
+  background-color: rgb(14, 13, 13);
+  animation: scroll-color 2s;
 }
 
-/*Main*/
+::-webkit-scrollbar-track {
+  background-color: rgb(14, 13, 13);
+}
+
+.main-scrolla:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.645);
+}
+.scrolla:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.645);
+}
+
+/*Main (HOMEPAGE)*/
+.control-bar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: rgba(30, 30, 30, 0.655);
+  z-index: 200;
+}
+.next-back {
+  background-color: rgba(20, 19, 19, 0.532);
+  opacity: 50%;
+}
+
+.next-back:focus {
+  background-color: rgba(20, 19, 19, 0.764);
+  opacity: 100%;
+}
+
+.main-scrolla {
+  overflow: auto;
+  height: 100vh;
+}
 
 .profilo {
-    max-width: 12rem;
+  max-width: 12rem;
 }
 
 .first-song {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 .small {
-    font-size: small;
+  font-size: small;
 }
 
 .penombra {
-    color: rgba(190, 189, 189, 0.623);
-    background-color: rgba(104, 104, 104, 0.211);
-    border-radius: 10px;
+  color: rgba(190, 189, 189, 0.623);
+  background-color: rgba(104, 104, 104, 0.211);
+  border-radius: 10px;
 }
 
 .sectionBackground {
-    background: linear-gradient(8deg, rgba(20, 19, 19, 1) 0%, rgba(20, 19, 19, 1) 46%, rgba(43, 42, 42, 1) 100%);
+  background: linear-gradient(8deg, rgba(20, 19, 19, 1) 0%, rgba(20, 19, 19, 1) 46%, rgba(43, 42, 42, 1) 100%);
 }
 
 .playlist {
-    background-color: rgba(104, 104, 104, 0.211);
-    max-height: 19rem;
+  background-color: rgba(104, 104, 104, 0.211);
+  max-height: 19rem;
+}
+
+.playlist:hover {
+  background-color: rgba(133, 133, 133, 0.241);
 }
 
 .playlist-description {
-    font-size: x-small;
+  font-size: x-small;
 }
 
-.playlist-sizing {}
+.btn.rounded-pill.px-4.text-dark {
+  background-color: #1ed760;
+}
+.menu {
+  background-color: rgb(43, 43, 43);
+}
 
 /*Seconda Aside (destra)*/
 
 h5 {
-    font-size: medium;
-    font-weight: bold;
+  font-size: medium;
+  font-weight: bold;
 }
 
 #friendsActivity {
-    overflow: auto;
+  overflow: auto;
 
-    height: 21rem;
+  height: 21rem;
 }
 
 .friendInfo {
-    height: 1.5rem;
-
+  height: 1.5rem;
 }
 
 .friendTitle {
-    font-size: smaller;
+  font-size: smaller;
 }
 
 .friendTime {
-    font-size: smaller;
+  font-size: smaller;
 }
 
 .friendSong {
-    font-size: xx-small;
+  font-size: xx-small;
 }
 
 .friendCategory {
-    font-size: x-small;
+  font-size: x-small;
 }
 
-/*------------------------ARTIST PAGE---------------------------------*/
+/*Main (ALBUM-PAGE)*/
 
-#background{
-    background-image: url(../imgs/main/eminem.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-}
-
-.btn-play{
-    background-color: #15c255;
-    width: fit-content;
-    border-radius: 50%;
-}
-.btn-play:hover{
-    transform: scale(1.15);
+.album-sfondo {
+  background: rgb(232, 200, 80);
+  background: linear-gradient(
+    180deg,
+    rgba(226, 194, 78, 0.9) 100px,
+    rgba(226, 194, 78, 0.763) 150px,
+    rgb(15, 15, 15) 600px
+  );
+  padding-bottom: 0;
 }
 
-.btn-follow{
-    border: 1px solid white;
-    border-bottom: 2px solid white;
-}
-.btn-follow:hover{
-    transform: scale(1.05);
+.first-cover {
+  -webkit-box-shadow: 0px 2px 30px 13px rgba(0, 0, 0, 0.36);
+  box-shadow: 0px 2px 30px 13px rgba(0, 0, 0, 0.36);
 }
 
-#eminem-round{
-    border-radius: 50%;
+.cover-artista {
+  border-radius: 50%;
 }
 
-.heart-pill{
-    background-color: #15c255;
-    border-radius: 50%;
-    text-align: center;
-    align-items: center;
-    height: 20px;
-    width: 20px;
-    position: relative;
-    top: 25px;
-    right: 25px;
+.album-duration {
+  color: rgba(255, 255, 255, 0.632);
 }
 
-.heart-pill i{
-    font-size: 13px;
+.album-list {
+  top: -200px;
+  background: rgb(24, 24, 24);
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.655) 45%, rgba(20, 19, 19, 0.764) 50%, rgb(24, 24, 24) 70%);
+}
+
+.play-button {
+  border: transparent;
+  border-radius: 50%;
+  background-color: #1ed760;
+
+  padding-inline: 8px;
+  padding-block: 8px;
+}
+
+.add-playlist {
+  border: none;
+}
+
+.selected:hover {
+  background-color: rgba(217, 217, 217, 0.36);
+}
+
+.selected a:hover {
+  color: white;
+}
+
+.first-part {
+  width: 65%;
+}
+
+.intestazione {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.127);
+}
+
+.album-elenco {
+  position: relative;
+  top: 13px;
+}
+
+/* main artist */
+
+.background {
+  object-position: center top;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+  height: 40vh;
+}
+
+.box{
+  bottom: 40px;
+}
+
+.btn-play {
+  background-color: #15c255;
+  width: fit-content;
+  border-radius: 50%;
+}
+.btn-play:hover {
+  transform: scale(1.15);
+}
+
+.btn-follow {
+  border: 1px solid white;
+  border-bottom: 2px solid white;
+}
+.btn-follow:hover {
+  transform: scale(1.05);
+}
+
+#eminem-round {
+  border-radius: 50%;
+}
+
+.heart-pill {
+  background-color: #15c255;
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  top: 25px;
+  right: 25px;
+}
+
+.heart-pill i {
+  font-size: 13px;
+}
+.giancarlo {
+  box-sizing: border-box;
+}
+/*Player*/
+
+.spotify-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: rgb(22, 20, 20);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+
+.song-info {
+  display: flex;
+  align-items: center;
+}
+
+.song-img {
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+  margin-right: 10px;
+}
+.song-img img {
+  object-fit: cover;
+}
+
+.song-title {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.song-artist {
+  font-size: 0.7rem;
+}
+
+.cuore {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.cuore i {
+  color: white;
+}
+.add-playlist:focus .bi-heart {
+  color: #1ed760;
+}
+.progress-bar {
+  display: flex;
+  align-items: center;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  color: white;
+}
+
+.player-controls button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  margin-right: 10px;
+  cursor: pointer;
+}
+#play-button {
+  border: transparent;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.progress {
+  height: 5px;
+  width: 100%;
+  background-color: gray;
+  position: relative;
+  margin-block: 15px;
+}
+
+.progress:after {
+  content: "";
+  height: 100%;
+  width: 50%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.audio-controls button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.volume-bar__slider-container {
+  box-sizing: border-box;
+}
+.volume-bar {
+  align-items: center;
 }
