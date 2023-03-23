@@ -118,7 +118,6 @@ button div {
 
 .playlist {
   background-color: rgba(104, 104, 104, 0.211);
-  max-height: 19rem;
 }
 
 .playlist:hover {
