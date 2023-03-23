@@ -381,6 +381,10 @@ h5 {
   left: 0;
 }
 
+.volume {
+  width: 60px;
+}
+
 .audio-controls {
   display: flex;
   align-items: center;
