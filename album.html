@@ -284,6 +284,7 @@
             <div class="row align-items-center mx-3 py-3">
               <div class="col-3">
                 <img
+                  id="imgAlbum"
                   class="first-song first-cover"
                   src="assets/imgs/main/image-1.jpg"
                   width="100%"
@@ -298,6 +299,7 @@
                 </h3>
                 <div class="d-flex mt-5 align-items-center">
                   <img
+                    id="imgGruppo"
                     src="assets/imgs/main/image-6.jpg"
                     alt="copertina-artista"
                     width="4%"
@@ -311,7 +313,10 @@
                       href="artist.html"
                       >Nome artista</a
                     >
-                    <span>-</span> anno <span>-</span> N-brani,
+                    <span>- </span> <span id="annoAlbum"> anno </span>
+                    <span>- </span><span> Tracce: </span
+                    ><span id="numeroBrani"> N-brani, </span
+                    ><span> - durata: </span>
                     <span id="durata" class="album-duration"
                       >durata totale.</span
                     >
@@ -464,7 +469,7 @@
                     <p class="album-duration">#</p>
                     <p class="ms-3 small album-duration">TITOLO</p>
                   </div>
-                  <div><p class="small album-duration">RIPRODUZIONI</p></div>
+                  <div><p class="small album-duration">RANK SPOTIFY</p></div>
                 </div>
                 <div>
                   <svg
@@ -485,7 +490,8 @@
                 </div>
               </div>
             </div>
-            <div role="button" class="container selected mt-3">
+            <div id="appendiTracks"></div>
+            <!-- <div role="button" class="container selected mt-3">
               <div class="d-flex justify-content-between px-4 mx-2">
                 <div class="d-flex justify-content-between first-part">
                   <div class="d-flex">
@@ -580,8 +586,8 @@
                   </button>
                 </div>
               </div>
-            </div>
-            <div role="button" class="container selected">
+            </div> -->
+            <!-- <div role="button" class="container selected">
               <div class="d-flex justify-content-between px-4 mx-2">
                 <div class="d-flex justify-content-between first-part">
                   <div class="d-flex">
@@ -1548,54 +1554,61 @@
                   </button>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </section>
         <!--Viola feat.Salmo-->
-        <footer><!--footer apertura-->
+        <footer>
+          <!--footer apertura-->
           <div class="container w-50 mx-auto px-0 text-center">
             <div class="d-flex justify-content-around">
-                <a href="https://www.facebook.com/SpotifyItalia/?brand_redir=6243987495&locale=it_IT%22%3E
-                  <i class="bi bi-facebook pe-2 fs-4 text-secondary"></i>
-                </a>
-                <a href="https://www.instagram.com/spotifyitaly/?hl=it%22%3E
-                    <i class="bi bi-instagram px-2 fs-4 text-secondary"></i>
-                </a>
-                <a href="https://twitter.com/Spotify%22%3E
-                    <i class="bi bi-twitter px-2 fs-4 text-secondary"></i>
-                </a>
+              <a
+                href="https://www.facebook.com/SpotifyItalia/?brand_redir=6243987495&locale=it_IT%22%3E"
+              >
+                <i class="bi bi-facebook pe-2 fs-4 text-secondary"></i>
+              </a>
+              <a href="https://www.instagram.com/spotifyitaly/?hl=it%22%3E">
+                <i class="bi bi-instagram px-2 fs-4 text-secondary"></i>
+              </a>
+              <a href="https://twitter.com/Spotify%22%3E">
+                <i class="bi bi-twitter px-2 fs-4 text-secondary"></i>
+              </a>
             </div>
             <div class="row text-secondary my-4 gx-5">
-                <div class="col-12 col-md-4">
-                    <p class="fw-bold text-white">Azienda</p>
-                    <p>Media Center</p>
-                    <p>Privacy</p>
-                    <p>Contact US</p>
-                </div>
-                <div class="col-12 col-md-4">
-                    <p class="fw-bold text-white">Community</p>
-                    <p>Investor Relations</p>
-                    <p>Legal Relations</p>
-                    <p>For Artists</p>
-                </div>
-                <div class="col-12 col-md-4">
-                    <p class="fw-bold text-white">Link utili</p>
-                    <p>Terms of Use</p>
-                    <p>Corporate Informations</p>
-                </div>
+              <div class="col-12 col-md-4">
+                <p class="fw-bold text-white">Azienda</p>
+                <p>Media Center</p>
+                <p>Privacy</p>
+                <p>Contact US</p>
+              </div>
+              <div class="col-12 col-md-4">
+                <p class="fw-bold text-white">Community</p>
+                <p>Investor Relations</p>
+                <p>Legal Relations</p>
+                <p>For Artists</p>
+              </div>
+              <div class="col-12 col-md-4">
+                <p class="fw-bold text-white">Link utili</p>
+                <p>Terms of Use</p>
+                <p>Corporate Informations</p>
+              </div>
             </div>
             <div class="row">
-
-                <a class="col-6" href="#">
-                    <button type="button" class="btn btn-outline-secondary">Edit Profile</button>
-                </a>
-                <a class="col-6" href="login.html">
-                    <button type="button" class="btn btn-outline-secondary">Accedi</button>
-                </a>
+              <a class="col-6" href="#">
+                <button type="button" class="btn btn-outline-secondary">
+                  Edit Profile
+                </button>
+              </a>
+              <a class="col-6" href="login.html">
+                <button type="button" class="btn btn-outline-secondary">
+                  Accedi
+                </button>
+              </a>
             </div>
             <p class="text-secondary mt-3">&copy; 2003 Spotify AB</p>
-        </div>
-        </footer><!--footer chiusura-->
+          </div>
+        </footer>
+        <!--footer chiusura-->
         <!--Altro-->
       </div>
       <!--Aside di destra (amici)-->
@@ -1750,7 +1763,7 @@
         </div>
       </div>
     </div>
-    <audio id="myAudio" src="path/to/audio/file.mp3"></audio>
+    <audio id="myAudio" src=""></audio>
 
     <div class="container-fluid spotify-player d-none d-lg-block">
       <div class="row d-flex">
@@ -2048,7 +2061,7 @@
       </div>
     </div>
 
-     <!--Aside di sinistra che compare in mobile-->
+    <!--Aside di sinistra che compare in mobile-->
     <div
       class="container-fluid py-2 darker position-absolute bottom-0 d-md-none"
     >
