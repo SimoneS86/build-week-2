@@ -1,1638 +1,1321 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Album</title>
-  </head>
-  <body class="sfondo">
-    <div class="row m-0">
-      <!--Aside di sinistra-->
-      <!--Display none fino a lg-->
-      <div class="d-none d-md-flex col-md-4 col-lg-2 d-flex flex-column text-white px-0 darker">
-        <ul>
-          <li class="dropdown">
-            <a class="album-duration tendina" data-bs-toggle="dropdown" role="button" aria-expanded="false" href=""
-              >...</a
-            >
-            <ul class="dropdown-menu menu">
-              <li>
-                <a class="dropdown-item text-white" href="#">----</a>
-              </li>
-              <hr class="my-2 text-secondary" />
-              <li>
-                <a class="dropdown-item text-white" href="#">----</a>
-              </li>
-              <hr class="my-2 text-secondary" />
 
-              <li>
-                <a class="dropdown-item text-white" href="#">----</a>
-              </li>
-            </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Album</title>
+</head>
+
+<body class="sfondo">
+  <div class="row m-0">
+    <!--Aside di sinistra-->
+    <!--Display none fino a lg-->
+    <div class="d-none d-md-flex col-md-4 col-lg-2 d-flex flex-column text-white px-0 darker">
+      <ul>
+        <li class="dropdown">
+          <a class="album-duration tendina" data-bs-toggle="dropdown" role="button" aria-expanded="false"
+            href="">...</a>
+          <ul class="dropdown-menu menu">
+            <li>
+              <a class="dropdown-item text-white" href="#">----</a>
+            </li>
+            <hr class="my-2 text-secondary" />
+            <li>
+              <a class="dropdown-item text-white" href="#">----</a>
+            </li>
+            <hr class="my-2 text-secondary" />
+
+            <li>
+              <a class="dropdown-item text-white" href="#">----</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="">
+        <ul>
+          <li>
+            <a class="album-duration small" href=""><svg height="20" width="20" aria-hidden="true"
+                class="Svg-sc-ytk21e-0 uPxdw home-active-icon mb-2 me-3" viewBox="0 0 24 24" data-encore-id="icon"
+                fill="white">
+                <path
+                  d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z">
+                </path>
+              </svg><span>Home</span></a>
+          </li>
+          <li class="mt-1">
+            <a class="album-duration small" href="#" onclick="showSearch()">
+              <svg height="20" width="20" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw search-icon me-3"
+                viewBox="0 0 24 24" data-encore-id="icon" fill="white">
+                <path
+                  d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z">
+                </path>
+              </svg><span>Cerca</span>
+            </a>
+            <div id="searchDiv" style="display: none">
+              <input type="text" id="searchInput" placeholder="Cerca..." />
+            </div>
+          </li>
+          <li class="mt-2">
+            <a class="album-duration small" href="">
+              <svg role="img" height="20" width="20" aria-hidden="true"
+                class="Svg-sc-ytk21e-0 uPxdw collection-icon me-3" viewBox="0 0 24 24" data-encore-id="icon"
+                fill="white">
+                <path
+                  d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z">
+                </path>
+              </svg><span>La tua libreria</span>
+            </a>
           </li>
         </ul>
-        <div class="">
-          <ul>
-            <li>
-              <a class="album-duration small" href=""
-                ><svg
-                  height="20"
-                  width="20"
-                  aria-hidden="true"
-                  class="Svg-sc-ytk21e-0 uPxdw home-active-icon mb-2 me-3"
-                  viewBox="0 0 24 24"
-                  data-encore-id="icon"
-                  fill="white">
-                  <path
-                    d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z"></path></svg
-                ><span>Home</span></a
-              >
-            </li>
-            <li class="mt-1">
-              <a class="album-duration small" href="#" onclick="showSearch()">
-                <svg
-                  height="20"
-                  width="20"
-                  aria-hidden="true"
-                  class="Svg-sc-ytk21e-0 uPxdw search-icon me-3"
-                  viewBox="0 0 24 24"
-                  data-encore-id="icon"
-                  fill="white">
-                  <path
-                    d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"></path></svg
-                ><span>Cerca</span>
-              </a>
-              <div id="searchDiv" style="display: none">
-                <input type="text" id="searchInput" placeholder="Cerca..." />
-              </div>
-            </li>
-            <li class="mt-2">
-              <a class="album-duration small" href="">
-                <svg
-                  role="img"
-                  height="20"
-                  width="20"
-                  aria-hidden="true"
-                  class="Svg-sc-ytk21e-0 uPxdw collection-icon me-3"
-                  viewBox="0 0 24 24"
-                  data-encore-id="icon"
-                  fill="white">
-                  <path
-                    d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z"></path></svg
-                ><span>La tua libreria</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="mt-4">
-          <ul>
-            <li>
-              <button class="d-flex bg-transparent border-0 px-0 small">
-                <div class="bg-light px-2">
-                  <svg
-                    role="img"
-                    height="10"
-                    width="6"
-                    aria-hidden="true"
-                    viewBox="0 0 16 16"
-                    data-encore-id="icon"
-                    class="Svg-sc-ytk21e-0 uPxdw mb-1">
-                    <path
-                      d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z"></path>
-                  </svg>
-                </div>
-                <div class="album-duration fw-bold ms-2">
-                  <span>Crea playlist</span>
-                </div>
-              </button>
-            </li>
-            <li>
-              <button class="d-flex bg-transparent border-0 px-0 mt-3 small">
-                <div class="px-2 liked">
-                  <svg
-                    role="img"
-                    height="10"
-                    width="6"
-                    aria-hidden="true"
-                    viewBox="0 0 16 16"
-                    data-encore-id="icon"
-                    class="Svg-sc-ytk21e-0 uPxdw mb-1"
-                    fill="white">
-                    <path
-                      d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z"></path>
-                  </svg>
-                </div>
-                <div class="album-duration fw-bold ms-2 text-start">
-                  <span>Brani che ti piacciono</span>
-                </div>
-              </button>
-            </li>
-            <li>
-              <button class="d-flex bg-transparent border-0 px-0 mt-3 small">
-                <div class="px-2 yourEpisodes">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="8"
-                    height="12"
-                    fill="currentColor"
-                    class="bi bi-bookmark-fill mb-1 iconEpisodes"
-                    viewBox="0 0 16 16">
-                    <path
-                      d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z" />
-                  </svg>
-                </div>
-                <div class="album-duration fw-bold ms-2">
-                  <span>I tuoi episodi</span>
-                </div>
-              </button>
-            </li>
-          </ul>
-        </div>
-        <hr class="text-secondary" />
-        <div class="scrolla small">
-          <ul class="album-duration">
-            <li>Chill Music 2023 💤</li>
-            <li>Gym Playlist ⚡</li>
-            <li>Musica salotto</li>
-            <li>Studyng 📚</li>
-            <li>This is Eminem</li>
-            <li>I tuoi brani preferiti del 2021</li>
-            <li>Back to 2016</li>
-            <li>Mezzanotte Chill Rap</li>
-            <li>Shower 🚿</li>
-            <li>Hit internazionali 2023</li>
-            <li>Muschio Selvaggio</li>
-            <li>50 Cent mix</li>
-            <li>Mix anni 2000</li>
-            <li>Se sei triste e ti manca l'allegria</li>
-            <li>Car 🚗</li>
-            <li>A rotazione</li>
-            <li>Hot Hits summer 2022</li>
-            <li>Chill Music 2023 💤</li>
-            <li>Gym Playlist ⚡</li>
-            <li>Musica salotto</li>
-            <li>Studyng 📚</li>
-            <li>This is Eminem</li>
-            <li>I tuoi brani preferiti del 2021</li>
-            <li>Back to 2016</li>
-            <li>Mezzanotte Chill Rap</li>
-            <li>Shower 🚿</li>
-            <li>Hit internazionali 2023</li>
-            <li>Muschio Selvaggio</li>
-            <li>50 Cent mix</li>
-            <li>Mix anni 2000</li>
-            <li>Se sei triste e ti manca l'allegria</li>
-            <li>Car 🚗</li>
-            <li>A rotazione</li>
-            <li>Hot Hits summer 2022</li>
-            <li>Chill Music 2023 💤</li>
-            <li>Gym Playlist ⚡</li>
-            <li>Musica salotto</li>
-            <li>Studyng 📚</li>
-            <li>This is Eminem</li>
-            <li>I tuoi brani preferiti del 2021</li>
-            <li>Back to 2016</li>
-            <li>Mezzanotte Chill Rap</li>
-            <li>Shower 🚿</li>
-            <li>Hit internazionali 2023</li>
-            <li>Muschio Selvaggio</li>
-            <li>50 Cent mix</li>
-            <li>Mix anni 2000</li>
-            <li>Se sei triste e ti manca l'allegria</li>
-            <li>Car 🚗</li>
-            <li>A rotazione</li>
-            <li>Hot Hits summer 2022</li>
-          </ul>
-        </div>
       </div>
-      <!--Main-->
-      <div class="d-flex flex-column text-white px-0 album-sfondo main-scrolla col-12 col-md-8">
-        <div class="d-flex pt-3 pb-3 justify-content-between align-items-center control-bar">
-          <!--header-->
-          <div class="d-flex ms-2">
-            <a class="rounded-pill text-white mx-2 next-back" href="#"><i class="bi bi-chevron-left mx-1"></i></a>
-            <a class="rounded-pill text-white mx-2 next-back" href="#"><i class="bi bi-chevron-right mx-1"></i></a>
-          </div>
-
-          <div class="dropdown profilo me-2">
-            <div
-              class="dropdown-toggle rounded-pill py-1 d-flex justify-content-center align-items-center me-0 darker"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              role="button">
-              <img class="rounded-pill me-2" src="assets/imgs/main/image-12.jpg" width="10%" />Daniele Rossi
-            </div>
-            <ul class="dropdown-menu bg-secondary">
-              <li><a class="dropdown-item" href="#">Account</a></li>
-              <li><a class="dropdown-item" href="#">Profilo</a></li>
-              <li><a class="dropdown-item" href="#">Assistenza</a></li>
-              <li><a class="dropdown-item" href="#">Download</a></li>
-              <li><a class="dropdown-item" href="#">Impostazioni</a></li>
-            </ul>
-          </div>
-        </div>
-        <!--header-->
-
-        <section id="album" class="container px-0">
-          <!--Viola feat.Salmo-->
-          <!--lo sfondo di questa section è più scuro-->
-          <div>
-            <div class="row align-items-center mx-3 py-3">
-              <div class="col-3">
-                <img class="first-song first-cover" src="assets/imgs/main/image-1.jpg" width="100%" />
-              </div>
-              <div class="col-9 flex-column align-items-end">
-                <div class="mt-5">
-                  <p class="fw-bold small mb-0">ALBUM</p>
-                </div>
-                <h3 id="albumNome" class="fw-bold display-5">VIOLA (feat. Salmo)</h3>
-                <div class="d-flex mt-5 align-items-center">
-                  <img
-                    src="assets/imgs/main/image-6.jpg"
-                    alt="copertina-artista"
-                    width="4%"
-                    height="4%"
-                    class="cover-artista me-2" />
-                  <p class="small fw-bold mb-0">
-                    <a id="nomeArtistaAlbum" class="text-white" href="artist.html">Nome artista</a>
-                    <span>-</span> anno <span>-</span> N-brani,
-                    <span id="durata" class="album-duration">durata totale.</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="album-list">
-            <div class="container pt-3">
-              <button
-                data-testid="play-button"
-                aria-label="Riproduci Rock Classics"
-                data-encore-id="buttonPrimary"
-                class="Button-sc-qlcn5g-0 eHhJDl play-button ms-3">
-                <span class="ButtonInner-sc-14ud5tc-0 dpREpp encore-bright-accent-set"
-                  ><span aria-hidden="true" class="IconWrapper__Wrapper-sc-1hf1hjl-0 fSnHJ"
-                    ><svg
-                      role="img"
-                      height="28"
-                      width="28"
-                      aria-hidden="true"
-                      viewBox="0 0 24 24"
-                      data-encore-id="icon"
-                      class="Svg-sc-ytk21e-0 uPxdw p-1">
-                      <path
-                        d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"></path></svg></span
-                ></span>
-              </button>
-              <button
-                type="button"
-                role="switch"
-                aria-checked="false"
-                aria-label="Salva in La tua libreria"
-                class="bg-transparent add-playlist ms-2"
-                data-testid="add-button">
-                <svg
-                  role="img"
-                  height="24"
-                  width="26"
-                  aria-hidden="true"
-                  viewBox="0 0 24 24"
-                  data-encore-id="icon"
-                  class="Svg-sc-ytk21e-0 uPxdw"
-                  fill="white">
+      <div class="mt-4">
+        <ul>
+          <li>
+            <button class="d-flex bg-transparent border-0 px-0 small">
+              <div class="bg-light px-2">
+                <svg role="img" height="10" width="6" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon"
+                  class="Svg-sc-ytk21e-0 uPxdw mb-1">
                   <path
-                    d="M5.21 1.57a6.757 6.757 0 0 1 6.708 1.545.124.124 0 0 0 .165 0 6.741 6.741 0 0 1 5.715-1.78l.004.001a6.802 6.802 0 0 1 5.571 5.376v.003a6.689 6.689 0 0 1-1.49 5.655l-7.954 9.48a2.518 2.518 0 0 1-3.857 0L2.12 12.37A6.683 6.683 0 0 1 .627 6.714 6.757 6.757 0 0 1 5.21 1.57zm3.12 1.803a4.757 4.757 0 0 0-5.74 3.725l-.001.002a4.684 4.684 0 0 0 1.049 3.969l.009.01 7.958 9.485a.518.518 0 0 0 .79 0l7.968-9.495a4.688 4.688 0 0 0 1.049-3.965 4.803 4.803 0 0 0-3.931-3.794 4.74 4.74 0 0 0-4.023 1.256l-.008.008a2.123 2.123 0 0 1-2.9 0l-.007-.007a4.757 4.757 0 0 0-2.214-1.194z"></path>
+                    d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z">
+                  </path>
                 </svg>
-              </button>
-              <button
-                type="button"
-                aria-label="Scarica album"
-                aria-checked="false"
-                class="bg-transparent text-white add-playlist ms-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="26"
-                  fill="currentColor"
-                  class="bi bi-arrow-down-circle"
-                  viewBox="0 0 16 16">
+              </div>
+              <div class="album-duration fw-bold ms-2">
+                <span>Crea playlist</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button class="d-flex bg-transparent border-0 px-0 mt-3 small">
+              <div class="px-2 liked">
+                <svg role="img" height="10" width="6" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon"
+                  class="Svg-sc-ytk21e-0 uPxdw mb-1" fill="white">
                   <path
-                    fill-rule="evenodd"
-                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+                    d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z">
+                  </path>
                 </svg>
-              </button>
-              <button
-                type="button"
-                aria-haspopup="menu"
-                aria-label="Altre opzioni per Rock Classics"
-                class="bg-transparent add-playlist ms-1"
-                data-testid="more-button"
-                aria-expanded="false">
-                <ul class="ps-0">
-                  <li class="dropdown">
-                    <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
-                      <svg
-                        role="img"
-                        height="24"
-                        width="24"
-                        aria-hidden="true"
-                        viewBox="0 0 24 24"
-                        data-encore-id="icon"
-                        class="Svg-sc-ytk21e-0 uPxdw"
-                        fill="white">
-                        <path
-                          d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg
-                    ></a>
-                    <ul class="dropdown-menu menu p-0">
-                      <li>
-                        <a class="dropdown-item text-white" href="#">Vai a Radio dell'artista</a>
-                      </li>
-                      <hr class="my-2 text-secondary" />
-                      <li>
-                        <a class="dropdown-item text-white" href="#">Aggiungi a La tua libreria</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item text-white" href="#">Aggiungi alla Playlist</a>
-                      </li>
-                      <hr class="my-2 text-secondary" />
-
-                      <li>
-                        <a class="dropdown-item text-white" href="#">Condividi</a>
-                      </li>
-                      <hr class="my-2 text-secondary" />
-
-                      <li>
-                        <a class="dropdown-item text-white" href="#">Apri con l'app per descktop</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </button>
-            </div>
-            <div class="container mt-4 intestazione">
-              <div class="d-flex justify-content-between px-4 mx-2">
-                <div class="d-flex justify-content-between first-part">
-                  <div class="d-flex">
-                    <p class="album-duration">#</p>
-                    <p class="ms-3 small album-duration">TITOLO</p>
-                  </div>
-                  <div><p class="small album-duration">RIPRODUZIONI</p></div>
-                </div>
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    fill="currentColor"
-                    class="bi bi-clock"
-                    viewBox="0 0 16 16">
-                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
-                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
-                  </svg>
-                </div>
               </div>
-            </div>
-            <div role="button" class="container selected mt-3">
-              <div class="d-flex justify-content-between px-4 mx-2">
-                <div class="d-flex justify-content-between first-part">
-                  <div class="d-flex">
-                    <p class="album-elenco album-duration">1</p>
-                    <div class="d-flex flex-column ms-3">
-                      <h5 class="">Titolo</h5>
-                      <p class="small">
-                        <a class="album-duration" href="artist.html">Artista</a>
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="album-elenco small album-duration d-none d-lg-inline">RIPRODUZIONI</p>
-                  </div>
-                </div>
-                <div>
-                  <p class="album-elenco small album-duration d-none d-lg-inline">durata</p>
-                  <button
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-label="Altre opzioni per Rock Classics"
-                    class="bg-transparent add-playlist ms-1 d-lg-none"
-                    data-testid="more-button"
-                    aria-expanded="false">
-                    <ul class="ps-0">
-                      <li class="dropdown">
-                        <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
-                          <svg
-                            role="img"
-                            height="24"
-                            width="24"
-                            aria-hidden="true"
-                            viewBox="0 0 24 24"
-                            data-encore-id="icon"
-                            class="Svg-sc-ytk21e-0 uPxdw"
-                            fill="white">
-                            <path
-                              d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg
-                        ></a>
-                        <ul class="dropdown-menu menu p-0">
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Nascondi brano</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Condividi</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Vai a Radio</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
+              <div class="album-duration fw-bold ms-2 text-start">
+                <span>Brani che ti piacciono</span>
               </div>
-            </div>
-            <div role="button" class="container selected">
-              <div class="d-flex justify-content-between px-4 mx-2">
-                <div class="d-flex justify-content-between first-part">
-                  <div class="d-flex">
-                    <p class="album-elenco">2</p>
-                    <div class="d-flex flex-column ms-3">
-                      <h5 class="">Titolo</h5>
-                      <p class="small album-duration">Artista</p>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
-                  </div>
-                </div>
-                <div>
-                  <p class="album-elenco small d-none d-lg-inline">durata</p>
-                  <button
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-label="Altre opzioni per Rock Classics"
-                    class="bg-transparent add-playlist ms-1 d-lg-none"
-                    data-testid="more-button"
-                    aria-expanded="false">
-                    <ul class="ps-0">
-                      <li class="dropdown">
-                        <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
-                          <svg
-                            role="img"
-                            height="24"
-                            width="24"
-                            aria-hidden="true"
-                            viewBox="0 0 24 24"
-                            data-encore-id="icon"
-                            class="Svg-sc-ytk21e-0 uPxdw"
-                            fill="white">
-                            <path
-                              d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg
-                        ></a>
-                        <ul class="dropdown-menu menu p-0">
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Nascondi brano</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Condividi</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Vai a Radio</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
+            </button>
+          </li>
+          <li>
+            <button class="d-flex bg-transparent border-0 px-0 mt-3 small">
+              <div class="px-2 yourEpisodes">
+                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" fill="currentColor"
+                  class="bi bi-bookmark-fill mb-1 iconEpisodes" viewBox="0 0 16 16">
+                  <path
+                    d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z" />
+                </svg>
               </div>
-            </div>
-            <div role="button" class="container selected">
-              <div class="d-flex justify-content-between px-4 mx-2">
-                <div class="d-flex justify-content-between first-part">
-                  <div class="d-flex">
-                    <p class="album-elenco">3</p>
-                    <div class="d-flex flex-column ms-3">
-                      <h5 class="">Titolo</h5>
-                      <p class="small album-duration">Artista</p>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
-                  </div>
-                </div>
-                <div>
-                  <p class="album-elenco small d-none d-lg-inline">durata</p>
-                  <button
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-label="Altre opzioni per Rock Classics"
-                    class="bg-transparent add-playlist ms-1 d-lg-none"
-                    data-testid="more-button"
-                    aria-expanded="false">
-                    <ul class="ps-0">
-                      <li class="dropdown">
-                        <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
-                          <svg
-                            role="img"
-                            height="24"
-                            width="24"
-                            aria-hidden="true"
-                            viewBox="0 0 24 24"
-                            data-encore-id="icon"
-                            class="Svg-sc-ytk21e-0 uPxdw"
-                            fill="white">
-                            <path
-                              d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg
-                        ></a>
-                        <ul class="dropdown-menu menu p-0">
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Nascondi brano</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Condividi</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Vai a Radio</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
+              <div class="album-duration fw-bold ms-2">
+                <span>I tuoi episodi</span>
               </div>
-            </div>
-            <div role="button" class="container selected">
-              <div class="d-flex justify-content-between px-4 mx-2">
-                <div class="d-flex justify-content-between first-part">
-                  <div class="d-flex">
-                    <p class="album-elenco">4</p>
-                    <div class="d-flex flex-column ms-3">
-                      <h5 class="">Titolo</h5>
-                      <p class="small album-duration">Artista</p>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
-                  </div>
-                </div>
-                <div>
-                  <p class="album-elenco small d-none d-lg-inline">durata</p>
-                  <button
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-label="Altre opzioni per Rock Classics"
-                    class="bg-transparent add-playlist ms-1 d-lg-none"
-                    data-testid="more-button"
-                    aria-expanded="false">
-                    <ul class="ps-0">
-                      <li class="dropdown">
-                        <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
-                          <svg
-                            role="img"
-                            height="24"
-                            width="24"
-                            aria-hidden="true"
-                            viewBox="0 0 24 24"
-                            data-encore-id="icon"
-                            class="Svg-sc-ytk21e-0 uPxdw"
-                            fill="white">
-                            <path
-                              d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg
-                        ></a>
-                        <ul class="dropdown-menu menu p-0">
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Nascondi brano</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Condividi</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Vai a Radio</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div role="button" class="container selected">
-              <div class="d-flex justify-content-between px-4 mx-2">
-                <div class="d-flex justify-content-between first-part">
-                  <div class="d-flex">
-                    <p class="album-elenco">5</p>
-                    <div class="d-flex flex-column ms-3">
-                      <h5 class="">Titolo</h5>
-                      <p class="small album-duration">Artista</p>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
-                  </div>
-                </div>
-                <div>
-                  <p class="album-elenco small d-none d-lg-inline">durata</p>
-                  <button
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-label="Altre opzioni per Rock Classics"
-                    class="bg-transparent add-playlist ms-1 d-lg-none"
-                    data-testid="more-button"
-                    aria-expanded="false">
-                    <ul class="ps-0">
-                      <li class="dropdown">
-                        <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
-                          <svg
-                            role="img"
-                            height="24"
-                            width="24"
-                            aria-hidden="true"
-                            viewBox="0 0 24 24"
-                            data-encore-id="icon"
-                            class="Svg-sc-ytk21e-0 uPxdw"
-                            fill="white">
-                            <path
-                              d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg
-                        ></a>
-                        <ul class="dropdown-menu menu p-0">
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Nascondi brano</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Condividi</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Vai a Radio</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div role="button" class="container selected">
-              <div class="d-flex justify-content-between px-4 mx-2">
-                <div class="d-flex justify-content-between first-part">
-                  <div class="d-flex">
-                    <p class="album-elenco">6</p>
-                    <div class="d-flex flex-column ms-3">
-                      <h5 class="">Titolo</h5>
-                      <p class="small album-duration">Artista</p>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
-                  </div>
-                </div>
-                <div>
-                  <p class="album-elenco small d-none d-lg-inline">durata</p>
-                  <button
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-label="Altre opzioni per Rock Classics"
-                    class="bg-transparent add-playlist ms-1 d-lg-none"
-                    data-testid="more-button"
-                    aria-expanded="false">
-                    <ul class="ps-0">
-                      <li class="dropdown">
-                        <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
-                          <svg
-                            role="img"
-                            height="24"
-                            width="24"
-                            aria-hidden="true"
-                            viewBox="0 0 24 24"
-                            data-encore-id="icon"
-                            class="Svg-sc-ytk21e-0 uPxdw"
-                            fill="white">
-                            <path
-                              d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg
-                        ></a>
-                        <ul class="dropdown-menu menu p-0">
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Nascondi brano</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Condividi</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Vai a Radio</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div role="button" class="container selected">
-              <div class="d-flex justify-content-between px-4 mx-2">
-                <div class="d-flex justify-content-between first-part">
-                  <div class="d-flex">
-                    <p class="album-elenco">7</p>
-                    <div class="d-flex flex-column ms-3">
-                      <h5 class="">Titolo</h5>
-                      <p class="small album-duration">Artista</p>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
-                  </div>
-                </div>
-                <div>
-                  <p class="album-elenco small d-none d-lg-inline">durata</p>
-                  <button
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-label="Altre opzioni per Rock Classics"
-                    class="bg-transparent add-playlist ms-1 d-lg-none"
-                    data-testid="more-button"
-                    aria-expanded="false">
-                    <ul class="ps-0">
-                      <li class="dropdown">
-                        <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
-                          <svg
-                            role="img"
-                            height="24"
-                            width="24"
-                            aria-hidden="true"
-                            viewBox="0 0 24 24"
-                            data-encore-id="icon"
-                            class="Svg-sc-ytk21e-0 uPxdw"
-                            fill="white">
-                            <path
-                              d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg
-                        ></a>
-                        <ul class="dropdown-menu menu p-0">
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Nascondi brano</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Condividi</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Vai a Radio</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div role="button" class="container selected">
-              <div class="d-flex justify-content-between px-4 mx-2">
-                <div class="d-flex justify-content-between first-part">
-                  <div class="d-flex">
-                    <p class="album-elenco">7</p>
-                    <div class="d-flex flex-column ms-3">
-                      <h5 class="">Titolo</h5>
-                      <p class="small album-duration">Artista</p>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
-                  </div>
-                </div>
-                <div>
-                  <p class="album-elenco small d-none d-lg-inline">durata</p>
-                  <button
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-label="Altre opzioni per Rock Classics"
-                    class="bg-transparent add-playlist ms-1 d-lg-none"
-                    data-testid="more-button"
-                    aria-expanded="false">
-                    <ul class="ps-0">
-                      <li class="dropdown">
-                        <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
-                          <svg
-                            role="img"
-                            height="24"
-                            width="24"
-                            aria-hidden="true"
-                            viewBox="0 0 24 24"
-                            data-encore-id="icon"
-                            class="Svg-sc-ytk21e-0 uPxdw"
-                            fill="white">
-                            <path
-                              d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg
-                        ></a>
-                        <ul class="dropdown-menu menu p-0">
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Nascondi brano</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Condividi</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Vai a Radio</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div role="button" class="container selected">
-              <div class="d-flex justify-content-between px-4 mx-2">
-                <div class="d-flex justify-content-between first-part">
-                  <div class="d-flex">
-                    <p class="album-elenco">7</p>
-                    <div class="d-flex flex-column ms-3">
-                      <h5 class="">Titolo</h5>
-                      <p class="small album-duration">Artista</p>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
-                  </div>
-                </div>
-                <div>
-                  <p class="album-elenco small d-none d-lg-inline">durata</p>
-                  <button
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-label="Altre opzioni per Rock Classics"
-                    class="bg-transparent add-playlist ms-1 d-lg-none"
-                    data-testid="more-button"
-                    aria-expanded="false">
-                    <ul class="ps-0">
-                      <li class="dropdown">
-                        <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
-                          <svg
-                            role="img"
-                            height="24"
-                            width="24"
-                            aria-hidden="true"
-                            viewBox="0 0 24 24"
-                            data-encore-id="icon"
-                            class="Svg-sc-ytk21e-0 uPxdw"
-                            fill="white">
-                            <path
-                              d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg
-                        ></a>
-                        <ul class="dropdown-menu menu p-0">
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Nascondi brano</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Condividi</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Vai a Radio</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div role="button" class="container selected">
-              <div class="d-flex justify-content-between px-4 mx-2">
-                <div class="d-flex justify-content-between first-part">
-                  <div class="d-flex">
-                    <p class="album-elenco">7</p>
-                    <div class="d-flex flex-column ms-3">
-                      <h5 class="">Titolo</h5>
-                      <p class="small album-duration">Artista</p>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
-                  </div>
-                </div>
-                <div>
-                  <p class="album-elenco small d-none d-lg-inline">durata</p>
-                  <button
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-label="Altre opzioni per Rock Classics"
-                    class="bg-transparent add-playlist ms-1 d-lg-none"
-                    data-testid="more-button"
-                    aria-expanded="false">
-                    <ul class="ps-0">
-                      <li class="dropdown">
-                        <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
-                          <svg
-                            role="img"
-                            height="24"
-                            width="24"
-                            aria-hidden="true"
-                            viewBox="0 0 24 24"
-                            data-encore-id="icon"
-                            class="Svg-sc-ytk21e-0 uPxdw"
-                            fill="white">
-                            <path
-                              d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg
-                        ></a>
-                        <ul class="dropdown-menu menu p-0">
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Nascondi brano</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Condividi</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Vai a Radio</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div role="button" class="container selected">
-              <div class="d-flex justify-content-between px-4 mx-2">
-                <div class="d-flex justify-content-between first-part">
-                  <div class="d-flex">
-                    <p class="album-elenco">7</p>
-                    <div class="d-flex flex-column ms-3">
-                      <h5 class="">Titolo</h5>
-                      <p class="small album-duration">Artista</p>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
-                  </div>
-                </div>
-                <div>
-                  <p class="album-elenco small d-none d-lg-inline">durata</p>
-                  <button
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-label="Altre opzioni per Rock Classics"
-                    class="bg-transparent add-playlist ms-1 d-lg-none"
-                    data-testid="more-button"
-                    aria-expanded="false">
-                    <ul class="ps-0">
-                      <li class="dropdown">
-                        <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
-                          <svg
-                            role="img"
-                            height="24"
-                            width="24"
-                            aria-hidden="true"
-                            viewBox="0 0 24 24"
-                            data-encore-id="icon"
-                            class="Svg-sc-ytk21e-0 uPxdw"
-                            fill="white">
-                            <path
-                              d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg
-                        ></a>
-                        <ul class="dropdown-menu menu p-0">
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Nascondi brano</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Condividi</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Vai a Radio</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div role="button" class="container selected">
-              <div class="d-flex justify-content-between px-4 mx-2">
-                <div class="d-flex justify-content-between first-part">
-                  <div class="d-flex">
-                    <p class="album-elenco">7</p>
-                    <div class="d-flex flex-column ms-3">
-                      <h5 class="">Titolo</h5>
-                      <p class="small album-duration">Artista</p>
-                    </div>
-                  </div>
-                  <div>
-                    <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
-                  </div>
-                </div>
-                <div>
-                  <p class="album-elenco small d-none d-lg-inline">durata</p>
-                  <button
-                    type="button"
-                    aria-haspopup="menu"
-                    aria-label="Altre opzioni per Rock Classics"
-                    class="bg-transparent add-playlist ms-1 d-lg-none"
-                    data-testid="more-button"
-                    aria-expanded="false">
-                    <ul class="ps-0">
-                      <li class="dropdown">
-                        <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
-                          <svg
-                            role="img"
-                            height="24"
-                            width="24"
-                            aria-hidden="true"
-                            viewBox="0 0 24 24"
-                            data-encore-id="icon"
-                            class="Svg-sc-ytk21e-0 uPxdw"
-                            fill="white">
-                            <path
-                              d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg
-                        ></a>
-                        <ul class="dropdown-menu menu p-0">
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Nascondi brano</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Condividi</a>
-                          </li>
-                          <hr class="my-2 text-secondary" />
-
-                          <li>
-                            <a class="dropdown-item text-white" href="#">Vai a Radio</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!--Viola feat.Salmo-->
-        <footer><!--footer apertura-->
-          <div class="container w-50 mx-auto px-0 text-center">
-            <div class="d-flex justify-content-around">
-                <a href="https://www.facebook.com/SpotifyItalia/?brand_redir=6243987495&locale=it_IT">
-                  <i class="bi bi-facebook pe-2 fs-4 text-secondary"></i>
-                </a>
-                <a href="https://www.instagram.com/spotifyitaly/?hl=it">
-                    <i class="bi bi-instagram px-2 fs-4 text-secondary"></i>
-                </a>
-                <a href="https://twitter.com/Spotify">
-                    <i class="bi bi-twitter px-2 fs-4 text-secondary"></i>
-                </a>
-            </div>
-            <div class="row text-secondary my-4 gx-5">
-                <div class="col-12 col-md-4">
-                    <p class="fw-bold text-white">Azienda</p>
-                    <p>Media Center</p>
-                    <p>Privacy</p>
-                    <p>Contact US</p>
-                </div>
-                <div class="col-12 col-md-4">
-                    <p class="fw-bold text-white">Community</p>
-                    <p>Investor Relations</p>
-                    <p>Legal Relations</p>
-                    <p>For Artists</p>
-                </div>
-                <div class="col-12 col-md-4">
-                    <p class="fw-bold text-white">Link utili</p>
-                    <p>Terms of Use</p>
-                    <p>Corporate Informations</p>
-                </div>
-            </div>
-            <div class="row">
-
-                <a class="col-6" href="#">
-                    <button type="button" class="btn btn-outline-secondary">Edit Profile</button>
-                </a>
-                <a class="col-6" href="login.html">
-                    <button type="button" class="btn btn-outline-secondary">Accedi</button>
-                </a>
-            </div>
-            <p class="text-secondary mt-3">&copy; 2003 Spotify AB</p>
-        </div>
-        </footer><!--footer chiusura-->
-        <!--Altro-->
+            </button>
+          </li>
+        </ul>
       </div>
-      <!--Aside di destra (amici)-->
-      <div class="col-2 d-none d-lg-flex flex-column text-white px-0 darker">
-        <div class="d-flex ms-1 mt-2 justify-content-between">
-          <h5 class="pt-1">Attività amici</h5>
-          <div>
-            <button class="bg-transparent border-0">
-              <a href="">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  fill="currentColor"
-                  class="bi bi-person-plus text-white"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                  <path
-                    fill-rule="evenodd"
-                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
-                </svg>
-              </a>
-            </button>
-            <button class="bg-transparent border-0 ps-0">
-              <a href=""
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-x-lg text-white"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" /></svg
-              ></a>
-            </button>
-          </div>
-        </div>
-        <div class="pt-4">
-          <div class="flex album-duration">
-            <img
-              class="mx-1 float-start rounded-pill"
-              src="assets/imgs/main/image-2.jpg"
-              alt="Utente-random"
-              width="37px" />
-
-            <div class="d-flex flex-column friend-container">
-              <div class="d-flex justify-content-between">
-                <p class="friendTitle my-0">Dario ferrara</p>
-                <p class="friendSong me-2">4 ore</p>
-              </div>
-              <p class="friendSong mb-1">Stan - Eminem</p>
-              <a class="friendCategory album-duration" href="#"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-gear"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
-                  <path
-                    d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
-                </svg>
-                Ep III</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="pt-4">
-          <div class="flex album-duration">
-            <img
-              class="mx-1 float-start rounded-pill"
-              src="assets/imgs/main/image-2.jpg"
-              alt="Utente-random"
-              width="37px" />
-
-            <div class="d-flex flex-column friend-container">
-              <div class="d-flex justify-content-between">
-                <p class="friendTitle my-0">Simone Sensini</p>
-                <p class="friendSong me-2">4 ore</p>
-              </div>
-              <p class="friendSong mb-1">Città - Fabrizio De Andrè</p>
-              <a class="friendCategory album-duration" href="#"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-gear"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
-                  <path
-                    d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
-                </svg>
-                Ep III</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="pt-4">
-          <div class="flex album-duration">
-            <img
-              class="mx-1 float-start rounded-pill"
-              src="assets/imgs/main/image-2.jpg"
-              alt="Utente-random"
-              width="37px" />
-
-            <div class="d-flex flex-column friend-container">
-              <div class="d-flex justify-content-between">
-                <p class="friendTitle my-0">Dennis De Biasi</p>
-                <p class="friendSong me-2">4 ore</p>
-              </div>
-              <p class="friendSong mb-1">Star - Luchè</p>
-              <a class="friendCategory album-duration" href="#"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-gear"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
-                  <path
-                    d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
-                </svg>
-                Ep III</a
-              >
-            </div>
-          </div>
-        </div>
+      <hr class="text-secondary" />
+      <div class="scrolla small">
+        <ul class="album-duration">
+          <li>Chill Music 2023 💤</li>
+          <li>Gym Playlist ⚡</li>
+          <li>Musica salotto</li>
+          <li>Studyng 📚</li>
+          <li>This is Eminem</li>
+          <li>I tuoi brani preferiti del 2021</li>
+          <li>Back to 2016</li>
+          <li>Mezzanotte Chill Rap</li>
+          <li>Shower 🚿</li>
+          <li>Hit internazionali 2023</li>
+          <li>Muschio Selvaggio</li>
+          <li>50 Cent mix</li>
+          <li>Mix anni 2000</li>
+          <li>Se sei triste e ti manca l'allegria</li>
+          <li>Car 🚗</li>
+          <li>A rotazione</li>
+          <li>Hot Hits summer 2022</li>
+          <li>Chill Music 2023 💤</li>
+          <li>Gym Playlist ⚡</li>
+          <li>Musica salotto</li>
+          <li>Studyng 📚</li>
+          <li>This is Eminem</li>
+          <li>I tuoi brani preferiti del 2021</li>
+          <li>Back to 2016</li>
+          <li>Mezzanotte Chill Rap</li>
+          <li>Shower 🚿</li>
+          <li>Hit internazionali 2023</li>
+          <li>Muschio Selvaggio</li>
+          <li>50 Cent mix</li>
+          <li>Mix anni 2000</li>
+          <li>Se sei triste e ti manca l'allegria</li>
+          <li>Car 🚗</li>
+          <li>A rotazione</li>
+          <li>Hot Hits summer 2022</li>
+          <li>Chill Music 2023 💤</li>
+          <li>Gym Playlist ⚡</li>
+          <li>Musica salotto</li>
+          <li>Studyng 📚</li>
+          <li>This is Eminem</li>
+          <li>I tuoi brani preferiti del 2021</li>
+          <li>Back to 2016</li>
+          <li>Mezzanotte Chill Rap</li>
+          <li>Shower 🚿</li>
+          <li>Hit internazionali 2023</li>
+          <li>Muschio Selvaggio</li>
+          <li>50 Cent mix</li>
+          <li>Mix anni 2000</li>
+          <li>Se sei triste e ti manca l'allegria</li>
+          <li>Car 🚗</li>
+          <li>A rotazione</li>
+          <li>Hot Hits summer 2022</li>
+        </ul>
       </div>
     </div>
-    <audio id="myAudio" src="path/to/audio/file.mp3"></audio>
+    <!--Main-->
+    <div class="d-flex flex-column text-white px-0 album-sfondo main-scrolla col-12 col-md-8">
+      <div class="d-flex pt-3 pb-3 justify-content-between align-items-center control-bar">
+        <!--header-->
+        <div class="d-flex ms-2">
+          <a class="rounded-pill text-white mx-2 next-back" href="#"><i class="bi bi-chevron-left mx-1"></i></a>
+          <a class="rounded-pill text-white mx-2 next-back" href="#"><i class="bi bi-chevron-right mx-1"></i></a>
+        </div>
 
-    <div class="container-fluid spotify-player d-none d-lg-block">
-      <div class="row d-flex">
-        <div class="col-3 song-info">
-          <div class="song-img">
-            <img src="assets/imgs/main/cover-viola.jpg" alt="copertina-inRiproduzione" width="50px" height="50px" />
+        <div class="dropdown profilo me-2">
+          <div class="dropdown-toggle rounded-pill py-1 d-flex justify-content-center align-items-center me-0 darker"
+            data-bs-toggle="dropdown" aria-expanded="false" role="button">
+            <img class="rounded-pill me-2" src="assets/imgs/main/image-12.jpg" width="10%" />Daniele Rossi
           </div>
-          <div class="d-flex flex-column">
-            <div class="song-title">Titolo della canzone</div>
-            <div class="song-artist album-duration">Artista della canzone</div>
+          <ul class="dropdown-menu bg-secondary">
+            <li><a class="dropdown-item" href="#">Account</a></li>
+            <li><a class="dropdown-item" href="#">Profilo</a></li>
+            <li><a class="dropdown-item" href="#">Assistenza</a></li>
+            <li><a class="dropdown-item" href="#">Download</a></li>
+            <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--header-->
+
+      <section id="album" class="container px-0">
+        <!--Viola feat.Salmo-->
+        <!--lo sfondo di questa section è più scuro-->
+        <div>
+          <div class="row align-items-center mx-3 py-3">
+            <div class="col-3">
+              <img class="first-song first-cover" src="assets/imgs/main/image-1.jpg" width="100%" />
+            </div>
+            <div class="col-9 flex-column align-items-end">
+              <div class="mt-5">
+                <p class="fw-bold small mb-0">ALBUM</p>
+              </div>
+              <h3 id="albumNome" class="fw-bold display-5">VIOLA (feat. Salmo)</h3>
+              <div class="d-flex mt-5 align-items-center">
+                <img src="assets/imgs/main/image-6.jpg" alt="copertina-artista" width="4%" height="4%"
+                  class="cover-artista me-2" />
+                <p class="small fw-bold mb-0">
+                  <a id="nomeArtistaAlbum" class="text-white" href="artist.html">Nome artista</a>
+                  <span>-</span> anno <span>-</span> N-brani,
+                  <span id="durata" class="album-duration">durata totale.</span>
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="cuore ms-2 d-none d-lg-inline">
-            <a href="#" class="bg-transparent ms-2 add-playlist">
-              <i class="bi bi-heart"></i>
+        </div>
+        <div class="album-list">
+          <div class="container pt-3">
+            <button data-testid="play-button" aria-label="Riproduci Rock Classics" data-encore-id="buttonPrimary"
+              class="Button-sc-qlcn5g-0 eHhJDl play-button ms-3">
+              <span class="ButtonInner-sc-14ud5tc-0 dpREpp encore-bright-accent-set"><span aria-hidden="true"
+                  class="IconWrapper__Wrapper-sc-1hf1hjl-0 fSnHJ"><svg role="img" height="28" width="28"
+                    aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw p-1">
+                    <path
+                      d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                    </path>
+                  </svg></span></span>
+            </button>
+            <button type="button" role="switch" aria-checked="false" aria-label="Salva in La tua libreria"
+              class="bg-transparent add-playlist ms-2" data-testid="add-button">
+              <svg role="img" height="24" width="26" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon"
+                class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                <path
+                  d="M5.21 1.57a6.757 6.757 0 0 1 6.708 1.545.124.124 0 0 0 .165 0 6.741 6.741 0 0 1 5.715-1.78l.004.001a6.802 6.802 0 0 1 5.571 5.376v.003a6.689 6.689 0 0 1-1.49 5.655l-7.954 9.48a2.518 2.518 0 0 1-3.857 0L2.12 12.37A6.683 6.683 0 0 1 .627 6.714 6.757 6.757 0 0 1 5.21 1.57zm3.12 1.803a4.757 4.757 0 0 0-5.74 3.725l-.001.002a4.684 4.684 0 0 0 1.049 3.969l.009.01 7.958 9.485a.518.518 0 0 0 .79 0l7.968-9.495a4.688 4.688 0 0 0 1.049-3.965 4.803 4.803 0 0 0-3.931-3.794 4.74 4.74 0 0 0-4.023 1.256l-.008.008a2.123 2.123 0 0 1-2.9 0l-.007-.007a4.757 4.757 0 0 0-2.214-1.194z">
+                </path>
+              </svg>
+            </button>
+            <button type="button" aria-label="Scarica album" aria-checked="false"
+              class="bg-transparent text-white add-playlist ms-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="26" fill="currentColor"
+                class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+              </svg>
+            </button>
+            <button type="button" aria-haspopup="menu" aria-label="Altre opzioni per Rock Classics"
+              class="bg-transparent add-playlist ms-1" data-testid="more-button" aria-expanded="false">
+              <ul class="ps-0">
+                <li class="dropdown">
+                  <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
+                    <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon"
+                      class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                      <path
+                        d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                      </path>
+                    </svg></a>
+                  <ul class="dropdown-menu menu p-0">
+                    <li>
+                      <a class="dropdown-item text-white" href="#">Vai a Radio dell'artista</a>
+                    </li>
+                    <hr class="my-2 text-secondary" />
+                    <li>
+                      <a class="dropdown-item text-white" href="#">Aggiungi a La tua libreria</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item text-white" href="#">Aggiungi alla Playlist</a>
+                    </li>
+                    <hr class="my-2 text-secondary" />
+
+                    <li>
+                      <a class="dropdown-item text-white" href="#">Condividi</a>
+                    </li>
+                    <hr class="my-2 text-secondary" />
+
+                    <li>
+                      <a class="dropdown-item text-white" href="#">Apri con l'app per descktop</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </button>
+          </div>
+          <div class="container mt-4 intestazione">
+            <div class="d-flex justify-content-between px-4 mx-2">
+              <div class="d-flex justify-content-between first-part">
+                <div class="d-flex">
+                  <p class="album-duration">#</p>
+                  <p class="ms-3 small album-duration">TITOLO</p>
+                </div>
+                <div>
+                  <p class="small album-duration">RIPRODUZIONI</p>
+                </div>
+              </div>
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clock"
+                  viewBox="0 0 16 16">
+                  <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div role="button" class="container selected mt-3">
+            <div class="d-flex justify-content-between px-4 mx-2">
+              <div class="d-flex justify-content-between first-part">
+                <div class="d-flex">
+                  <p class="album-elenco album-duration">1</p>
+                  <div class="d-flex flex-column ms-3">
+                    <h5 class="">Titolo</h5>
+                    <p class="small">
+                      <a class="album-duration" href="artist.html">Artista</a>
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <p class="album-elenco small album-duration d-none d-lg-inline">RIPRODUZIONI</p>
+                </div>
+              </div>
+              <div>
+                <p class="album-elenco small album-duration d-none d-lg-inline">durata</p>
+                <button type="button" aria-haspopup="menu" aria-label="Altre opzioni per Rock Classics"
+                  class="bg-transparent add-playlist ms-1 d-lg-none" data-testid="more-button" aria-expanded="false">
+                  <ul class="ps-0">
+                    <li class="dropdown">
+                      <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
+                        <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                          data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                          <path
+                            d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                          </path>
+                        </svg></a>
+                      <ul class="dropdown-menu menu p-0">
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Nascondi brano</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Condividi</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Vai a Radio</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div role="button" class="container selected">
+            <div class="d-flex justify-content-between px-4 mx-2">
+              <div class="d-flex justify-content-between first-part">
+                <div class="d-flex">
+                  <p class="album-elenco">2</p>
+                  <div class="d-flex flex-column ms-3">
+                    <h5 class="">Titolo</h5>
+                    <p class="small album-duration">Artista</p>
+                  </div>
+                </div>
+                <div>
+                  <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
+                </div>
+              </div>
+              <div>
+                <p class="album-elenco small d-none d-lg-inline">durata</p>
+                <button type="button" aria-haspopup="menu" aria-label="Altre opzioni per Rock Classics"
+                  class="bg-transparent add-playlist ms-1 d-lg-none" data-testid="more-button" aria-expanded="false">
+                  <ul class="ps-0">
+                    <li class="dropdown">
+                      <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
+                        <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                          data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                          <path
+                            d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                          </path>
+                        </svg></a>
+                      <ul class="dropdown-menu menu p-0">
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Nascondi brano</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Condividi</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Vai a Radio</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div role="button" class="container selected">
+            <div class="d-flex justify-content-between px-4 mx-2">
+              <div class="d-flex justify-content-between first-part">
+                <div class="d-flex">
+                  <p class="album-elenco">3</p>
+                  <div class="d-flex flex-column ms-3">
+                    <h5 class="">Titolo</h5>
+                    <p class="small album-duration">Artista</p>
+                  </div>
+                </div>
+                <div>
+                  <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
+                </div>
+              </div>
+              <div>
+                <p class="album-elenco small d-none d-lg-inline">durata</p>
+                <button type="button" aria-haspopup="menu" aria-label="Altre opzioni per Rock Classics"
+                  class="bg-transparent add-playlist ms-1 d-lg-none" data-testid="more-button" aria-expanded="false">
+                  <ul class="ps-0">
+                    <li class="dropdown">
+                      <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
+                        <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                          data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                          <path
+                            d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                          </path>
+                        </svg></a>
+                      <ul class="dropdown-menu menu p-0">
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Nascondi brano</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Condividi</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Vai a Radio</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div role="button" class="container selected">
+            <div class="d-flex justify-content-between px-4 mx-2">
+              <div class="d-flex justify-content-between first-part">
+                <div class="d-flex">
+                  <p class="album-elenco">4</p>
+                  <div class="d-flex flex-column ms-3">
+                    <h5 class="">Titolo</h5>
+                    <p class="small album-duration">Artista</p>
+                  </div>
+                </div>
+                <div>
+                  <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
+                </div>
+              </div>
+              <div>
+                <p class="album-elenco small d-none d-lg-inline">durata</p>
+                <button type="button" aria-haspopup="menu" aria-label="Altre opzioni per Rock Classics"
+                  class="bg-transparent add-playlist ms-1 d-lg-none" data-testid="more-button" aria-expanded="false">
+                  <ul class="ps-0">
+                    <li class="dropdown">
+                      <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
+                        <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                          data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                          <path
+                            d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                          </path>
+                        </svg></a>
+                      <ul class="dropdown-menu menu p-0">
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Nascondi brano</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Condividi</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Vai a Radio</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div role="button" class="container selected">
+            <div class="d-flex justify-content-between px-4 mx-2">
+              <div class="d-flex justify-content-between first-part">
+                <div class="d-flex">
+                  <p class="album-elenco">5</p>
+                  <div class="d-flex flex-column ms-3">
+                    <h5 class="">Titolo</h5>
+                    <p class="small album-duration">Artista</p>
+                  </div>
+                </div>
+                <div>
+                  <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
+                </div>
+              </div>
+              <div>
+                <p class="album-elenco small d-none d-lg-inline">durata</p>
+                <button type="button" aria-haspopup="menu" aria-label="Altre opzioni per Rock Classics"
+                  class="bg-transparent add-playlist ms-1 d-lg-none" data-testid="more-button" aria-expanded="false">
+                  <ul class="ps-0">
+                    <li class="dropdown">
+                      <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
+                        <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                          data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                          <path
+                            d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                          </path>
+                        </svg></a>
+                      <ul class="dropdown-menu menu p-0">
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Nascondi brano</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Condividi</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Vai a Radio</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div role="button" class="container selected">
+            <div class="d-flex justify-content-between px-4 mx-2">
+              <div class="d-flex justify-content-between first-part">
+                <div class="d-flex">
+                  <p class="album-elenco">6</p>
+                  <div class="d-flex flex-column ms-3">
+                    <h5 class="">Titolo</h5>
+                    <p class="small album-duration">Artista</p>
+                  </div>
+                </div>
+                <div>
+                  <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
+                </div>
+              </div>
+              <div>
+                <p class="album-elenco small d-none d-lg-inline">durata</p>
+                <button type="button" aria-haspopup="menu" aria-label="Altre opzioni per Rock Classics"
+                  class="bg-transparent add-playlist ms-1 d-lg-none" data-testid="more-button" aria-expanded="false">
+                  <ul class="ps-0">
+                    <li class="dropdown">
+                      <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
+                        <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                          data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                          <path
+                            d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                          </path>
+                        </svg></a>
+                      <ul class="dropdown-menu menu p-0">
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Nascondi brano</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Condividi</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Vai a Radio</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div role="button" class="container selected">
+            <div class="d-flex justify-content-between px-4 mx-2">
+              <div class="d-flex justify-content-between first-part">
+                <div class="d-flex">
+                  <p class="album-elenco">7</p>
+                  <div class="d-flex flex-column ms-3">
+                    <h5 class="">Titolo</h5>
+                    <p class="small album-duration">Artista</p>
+                  </div>
+                </div>
+                <div>
+                  <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
+                </div>
+              </div>
+              <div>
+                <p class="album-elenco small d-none d-lg-inline">durata</p>
+                <button type="button" aria-haspopup="menu" aria-label="Altre opzioni per Rock Classics"
+                  class="bg-transparent add-playlist ms-1 d-lg-none" data-testid="more-button" aria-expanded="false">
+                  <ul class="ps-0">
+                    <li class="dropdown">
+                      <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
+                        <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                          data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                          <path
+                            d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                          </path>
+                        </svg></a>
+                      <ul class="dropdown-menu menu p-0">
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Nascondi brano</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Condividi</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Vai a Radio</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div role="button" class="container selected">
+            <div class="d-flex justify-content-between px-4 mx-2">
+              <div class="d-flex justify-content-between first-part">
+                <div class="d-flex">
+                  <p class="album-elenco">7</p>
+                  <div class="d-flex flex-column ms-3">
+                    <h5 class="">Titolo</h5>
+                    <p class="small album-duration">Artista</p>
+                  </div>
+                </div>
+                <div>
+                  <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
+                </div>
+              </div>
+              <div>
+                <p class="album-elenco small d-none d-lg-inline">durata</p>
+                <button type="button" aria-haspopup="menu" aria-label="Altre opzioni per Rock Classics"
+                  class="bg-transparent add-playlist ms-1 d-lg-none" data-testid="more-button" aria-expanded="false">
+                  <ul class="ps-0">
+                    <li class="dropdown">
+                      <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
+                        <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                          data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                          <path
+                            d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                          </path>
+                        </svg></a>
+                      <ul class="dropdown-menu menu p-0">
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Nascondi brano</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Condividi</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Vai a Radio</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div role="button" class="container selected">
+            <div class="d-flex justify-content-between px-4 mx-2">
+              <div class="d-flex justify-content-between first-part">
+                <div class="d-flex">
+                  <p class="album-elenco">7</p>
+                  <div class="d-flex flex-column ms-3">
+                    <h5 class="">Titolo</h5>
+                    <p class="small album-duration">Artista</p>
+                  </div>
+                </div>
+                <div>
+                  <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
+                </div>
+              </div>
+              <div>
+                <p class="album-elenco small d-none d-lg-inline">durata</p>
+                <button type="button" aria-haspopup="menu" aria-label="Altre opzioni per Rock Classics"
+                  class="bg-transparent add-playlist ms-1 d-lg-none" data-testid="more-button" aria-expanded="false">
+                  <ul class="ps-0">
+                    <li class="dropdown">
+                      <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
+                        <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                          data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                          <path
+                            d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                          </path>
+                        </svg></a>
+                      <ul class="dropdown-menu menu p-0">
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Nascondi brano</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Condividi</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Vai a Radio</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div role="button" class="container selected">
+            <div class="d-flex justify-content-between px-4 mx-2">
+              <div class="d-flex justify-content-between first-part">
+                <div class="d-flex">
+                  <p class="album-elenco">7</p>
+                  <div class="d-flex flex-column ms-3">
+                    <h5 class="">Titolo</h5>
+                    <p class="small album-duration">Artista</p>
+                  </div>
+                </div>
+                <div>
+                  <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
+                </div>
+              </div>
+              <div>
+                <p class="album-elenco small d-none d-lg-inline">durata</p>
+                <button type="button" aria-haspopup="menu" aria-label="Altre opzioni per Rock Classics"
+                  class="bg-transparent add-playlist ms-1 d-lg-none" data-testid="more-button" aria-expanded="false">
+                  <ul class="ps-0">
+                    <li class="dropdown">
+                      <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
+                        <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                          data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                          <path
+                            d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                          </path>
+                        </svg></a>
+                      <ul class="dropdown-menu menu p-0">
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Nascondi brano</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Condividi</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Vai a Radio</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div role="button" class="container selected">
+            <div class="d-flex justify-content-between px-4 mx-2">
+              <div class="d-flex justify-content-between first-part">
+                <div class="d-flex">
+                  <p class="album-elenco">7</p>
+                  <div class="d-flex flex-column ms-3">
+                    <h5 class="">Titolo</h5>
+                    <p class="small album-duration">Artista</p>
+                  </div>
+                </div>
+                <div>
+                  <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
+                </div>
+              </div>
+              <div>
+                <p class="album-elenco small d-none d-lg-inline">durata</p>
+                <button type="button" aria-haspopup="menu" aria-label="Altre opzioni per Rock Classics"
+                  class="bg-transparent add-playlist ms-1 d-lg-none" data-testid="more-button" aria-expanded="false">
+                  <ul class="ps-0">
+                    <li class="dropdown">
+                      <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
+                        <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                          data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                          <path
+                            d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                          </path>
+                        </svg></a>
+                      <ul class="dropdown-menu menu p-0">
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Nascondi brano</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Condividi</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Vai a Radio</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div role="button" class="container selected">
+            <div class="d-flex justify-content-between px-4 mx-2">
+              <div class="d-flex justify-content-between first-part">
+                <div class="d-flex">
+                  <p class="album-elenco">7</p>
+                  <div class="d-flex flex-column ms-3">
+                    <h5 class="">Titolo</h5>
+                    <p class="small album-duration">Artista</p>
+                  </div>
+                </div>
+                <div>
+                  <p class="album-elenco small d-none d-lg-inline">RIPRODUZIONI</p>
+                </div>
+              </div>
+              <div>
+                <p class="album-elenco small d-none d-lg-inline">durata</p>
+                <button type="button" aria-haspopup="menu" aria-label="Altre opzioni per Rock Classics"
+                  class="bg-transparent add-playlist ms-1 d-lg-none" data-testid="more-button" aria-expanded="false">
+                  <ul class="ps-0">
+                    <li class="dropdown">
+                      <a class="text-white" data-bs-toggle="dropdown" role="button" aria-expanded="false" href="">
+                        <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24"
+                          data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw" fill="white">
+                          <path
+                            d="M4.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm15 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-7.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                          </path>
+                        </svg></a>
+                      <ul class="dropdown-menu menu p-0">
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla playlist</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Nascondi brano</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Aggiungi alla coda</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Condividi</a>
+                        </li>
+                        <hr class="my-2 text-secondary" />
+
+                        <li>
+                          <a class="dropdown-item text-white" href="#">Vai a Radio</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Viola feat.Salmo-->
+      <footer><!--footer apertura-->
+        <div class="container w-50 mx-auto px-0 text-center">
+          <div class="d-flex justify-content-around">
+            <a href="https://www.facebook.com/SpotifyItalia/?brand_redir=6243987495&locale=it_IT">
+              <i class="bi bi-facebook pe-2 fs-4 text-secondary"></i>
+            </a>
+            <a href="https://www.instagram.com/spotifyitaly/?hl=it">
+              <i class="bi bi-instagram px-2 fs-4 text-secondary"></i>
+            </a>
+            <a href="https://twitter.com/Spotify">
+              <i class="bi bi-twitter px-2 fs-4 text-secondary"></i>
             </a>
           </div>
-        </div>
-        <div class="col-6 flex-column progress-bar">
-          <div class="player-controls d-none d-lg-inline">
-            <button
-              class="KVKoQ3u4JpKTvSSFtd6J"
-              role="switch"
-              aria-checked="false"
-              aria-label="Abilita riproduzione casuale"
-              data-testid="control-button-shuffle"
-              style="--button-size: 32px"
-              aria-expanded="true"
-              data-context-menu-open="true">
-              <svg
-                role="img"
-                height="16"
-                width="16"
-                aria-hidden="true"
-                viewBox="0 0 16 16"
-                data-encore-id="icon"
-                class="Svg-sc-ytk21e-0 gQUQL"
-                fill="white">
-                <path
-                  d="M13.151.922a.75.75 0 1 0-1.06 1.06L13.109 3H11.16a3.75 3.75 0 0 0-2.873 1.34l-6.173 7.356A2.25 2.25 0 0 1 .39 12.5H0V14h.391a3.75 3.75 0 0 0 2.873-1.34l6.173-7.356a2.25 2.25 0 0 1 1.724-.804h1.947l-1.017 1.018a.75.75 0 0 0 1.06 1.06L15.98 3.75 13.15.922zM.391 3.5H0V2h.391c1.109 0 2.16.49 2.873 1.34L4.89 5.277l-.979 1.167-1.796-2.14A2.25 2.25 0 0 0 .39 3.5z"></path>
-                <path
-                  d="m7.5 10.723.98-1.167.957 1.14a2.25 2.25 0 0 0 1.724.804h1.947l-1.017-1.018a.75.75 0 1 1 1.06-1.06l2.829 2.828-2.829 2.828a.75.75 0 1 1-1.06-1.06L13.109 13H11.16a3.75 3.75 0 0 1-2.873-1.34l-.787-.938z"></path>
-              </svg>
-            </button>
-            <button
-              class="fn72ari9aEmKo4JcwteT"
-              aria-label="Indietro"
-              data-testid="control-button-skip-back"
-              style="--button-size: 32px"
-              aria-expanded="true"
-              data-context-menu-open="true">
-              <svg
-                role="img"
-                height="16"
-                width="16"
-                aria-hidden="true"
-                viewBox="0 0 16 16"
-                data-encore-id="icon"
-                class="Svg-sc-ytk21e-0 gQUQL"
-                fill="white">
-                <path
-                  d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"></path>
-              </svg>
-            </button>
-            <button
-              id="play-button"
-              data-testid="play-button2"
-              aria-label="Riproduci Rock Classics"
-              data-encore-id="buttonPrimary"
-              class="Button-sc-qlcn5g-0 eHhJDl play-button2">
-              <span class="ButtonInner-sc-14ud5tc-0 dpREpp encore-bright-accent-set"
-                ><span aria-hidden="true" class="IconWrapper__Wrapper-sc-1hf1hjl-0 fSnHJ"
-                  ><svg
-                    role="img"
-                    height="22"
-                    width="22"
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                    data-encore-id="icon"
-                    class="Svg-sc-ytk21e-0 uPxdw p-1">
-                    <path
-                      d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"></path></svg></span
-              ></span>
-            </button>
-            <button
-              class="mnipjT4SLDMgwiDCEnRC"
-              aria-label="Avanti"
-              data-testid="control-button-skip-forward"
-              style="--button-size: 32px"
-              aria-expanded="true"
-              data-context-menu-open="true">
-              <svg
-                role="img"
-                height="16"
-                width="16"
-                aria-hidden="true"
-                viewBox="0 0 16 16"
-                data-encore-id="icon"
-                class="Svg-sc-ytk21e-0 gQUQL"
-                fill="white">
-                <path
-                  d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"></path>
-              </svg>
-            </button>
-            <button
-              class="Vz6yjzttS0YlLcwrkoUR"
-              role="checkbox"
-              aria-checked="false"
-              aria-label="Abilita ripetizione"
-              data-testid="control-button-repeat"
-              style="--button-size: 32px"
-              aria-expanded="true"
-              data-context-menu-open="true">
-              <svg
-                role="img"
-                height="16"
-                width="16"
-                aria-hidden="true"
-                viewBox="0 0 16 16"
-                data-encore-id="icon"
-                class="Svg-sc-ytk21e-0 gQUQL"
-                fill="white">
-                <path
-                  d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5z"></path>
-              </svg>
-            </button>
+          <div class="row text-secondary my-4 gx-5">
+            <div class="col-12 col-md-4">
+              <p class="fw-bold text-white">Azienda</p>
+              <p>Media Center</p>
+              <p>Privacy</p>
+              <p>Contact US</p>
+            </div>
+            <div class="col-12 col-md-4">
+              <p class="fw-bold text-white">Community</p>
+              <p>Investor Relations</p>
+              <p>Legal Relations</p>
+              <p>For Artists</p>
+            </div>
+            <div class="col-12 col-md-4">
+              <p class="fw-bold text-white">Link utili</p>
+              <p>Terms of Use</p>
+              <p>Corporate Informations</p>
+            </div>
           </div>
-          <div class="progress"></div>
+          <div class="row">
+
+            <a class="col-6" href="#">
+              <button type="button" class="btn btn-outline-secondary">Edit Profile</button>
+            </a>
+            <a class="col-6" href="login.html">
+              <button type="button" class="btn btn-outline-secondary">Accedi</button>
+            </a>
+          </div>
+          <p class="text-secondary mt-3">&copy; 2003 Spotify AB</p>
         </div>
-        <div class="col-3 flex-end audio-controls">
-          <button
-            class="Button-sc-1dqy6lx-0 ePIdkV KAZD28usA1vPz5GVpm63 ZMXGDTbwxKJhbmEDZlYy Xmv2oAnTB85QE4sqbK00 d-none d-lg-inline"
-            data-testid="lyrics-button"
-            data-active="false"
-            aria-label="Lyrics"
-            data-encore-id="buttonTertiary"
-            aria-expanded="true"
-            data-context-menu-open="true">
-            <span aria-hidden="true" class="IconWrapper__Wrapper-sc-16usrgb-0 jyHIqB"
-              ><svg
-                role="img"
-                height="16"
-                width="16"
-                aria-hidden="true"
-                viewBox="0 0 16 16"
-                data-encore-id="icon"
-                class="Svg-sc-ytk21e-0 gQUQL"
-                fill="white">
+      </footer><!--footer chiusura-->
+      <!--Altro-->
+    </div>
+    <!--Aside di destra (amici)-->
+    <div class="col-2 d-none d-lg-flex flex-column text-white px-0 darker">
+      <div class="d-flex ms-1 mt-2 justify-content-between">
+        <h5 class="pt-1">Attività amici</h5>
+        <div>
+          <button class="bg-transparent border-0">
+            <a href="">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                class="bi bi-person-plus text-white" viewBox="0 0 16 16">
                 <path
-                  d="M13.426 2.574a2.831 2.831 0 0 0-4.797 1.55l3.247 3.247a2.831 2.831 0 0 0 1.55-4.797zM10.5 8.118l-2.619-2.62A63303.13 63303.13 0 0 0 4.74 9.075L2.065 12.12a1.287 1.287 0 0 0 1.816 1.816l3.06-2.688 3.56-3.129zM7.12 4.094a4.331 4.331 0 1 1 4.786 4.786l-3.974 3.493-3.06 2.689a2.787 2.787 0 0 1-3.933-3.933l2.676-3.045 3.505-3.99z"></path></svg
-            ></span>
+                  d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                <path fill-rule="evenodd"
+                  d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+              </svg>
+            </a>
           </button>
-          <button
-            class="Button-sc-1dqy6lx-0 ePIdkV KAZD28usA1vPz5GVpm63 d-none d-lg-inline"
-            data-testid="control-button-queue"
-            data-active="false"
-            aria-label="Coda"
-            data-encore-id="buttonTertiary"
-            aria-expanded="false"
-            data-context-menu-open="true">
-            <span aria-hidden="true" class="IconWrapper__Wrapper-sc-16usrgb-0 jyHIqB"
-              ><svg
-                role="img"
-                height="16"
-                width="16"
-                aria-hidden="true"
-                viewBox="0 0 16 16"
-                data-encore-id="icon"
-                class="Svg-sc-ytk21e-0 gQUQL"
-                fill="white">
+          <button class="bg-transparent border-0 ps-0">
+            <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-x-lg text-white" viewBox="0 0 16 16">
                 <path
-                  d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 0 1 3.5 1h9a2.5 2.5 0 0 1 0 5h-9A2.5 2.5 0 0 1 1 3.5zm2.5-1a1 1 0 0 0 0 2h9a1 1 0 1 0 0-2h-9z"></path></svg
-            ></span>
+                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+              </svg></a>
           </button>
-          <button
-            class="control-button INitzTSjokOMEJOc6P2H"
-            aria-label="Connetti a un dispositivo"
-            aria-expanded="false"
-            id="device-picker-icon-button">
-            <svg
-              role="presentation"
-              height="16"
-              width="16"
-              aria-hidden="true"
-              class="Svg-sc-ytk21e-0 gQUQL"
-              viewBox="0 0 16 16"
-              data-encore-id="icon"
-              fill="white">
+        </div>
+      </div>
+      <div class="pt-4">
+        <div class="flex album-duration">
+          <img class="mx-1 float-start rounded-pill" src="assets/imgs/main/image-2.jpg" alt="Utente-random"
+            width="37px" />
+
+          <div class="d-flex flex-column friend-container">
+            <div class="d-flex justify-content-between">
+              <p class="friendTitle my-0">Dario ferrara</p>
+              <p class="friendSong me-2">4 ore</p>
+            </div>
+            <p class="friendSong mb-1">Stan - Eminem</p>
+            <a class="friendCategory album-duration" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                <path
+                  d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+                <path
+                  d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+              </svg>
+              Ep III</a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-4">
+        <div class="flex album-duration">
+          <img class="mx-1 float-start rounded-pill" src="assets/imgs/main/image-2.jpg" alt="Utente-random"
+            width="37px" />
+
+          <div class="d-flex flex-column friend-container">
+            <div class="d-flex justify-content-between">
+              <p class="friendTitle my-0">Simone Sensini</p>
+              <p class="friendSong me-2">4 ore</p>
+            </div>
+            <p class="friendSong mb-1">Città - Fabrizio De Andrè</p>
+            <a class="friendCategory album-duration" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                <path
+                  d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+                <path
+                  d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+              </svg>
+              Ep III</a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-4">
+        <div class="flex album-duration">
+          <img class="mx-1 float-start rounded-pill" src="assets/imgs/main/image-2.jpg" alt="Utente-random"
+            width="37px" />
+
+          <div class="d-flex flex-column friend-container">
+            <div class="d-flex justify-content-between">
+              <p class="friendTitle my-0">Dennis De Biasi</p>
+              <p class="friendSong me-2">4 ore</p>
+            </div>
+            <p class="friendSong mb-1">Star - Luchè</p>
+            <a class="friendCategory album-duration" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                <path
+                  d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+                <path
+                  d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+              </svg>
+              Ep III</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <audio id="myAudio" src="path/to/audio/file.mp3"></audio>
+
+  <div class="container-fluid spotify-player d-none d-lg-block">
+    <div class="row d-flex">
+      <div class="col-3 song-info">
+        <div class="song-img">
+          <img src="assets/imgs/main/cover-viola.jpg" alt="copertina-inRiproduzione" width="50px" height="50px" />
+        </div>
+        <div class="d-flex flex-column">
+          <div class="song-title">Titolo della canzone</div>
+          <div class="song-artist album-duration">Artista della canzone</div>
+        </div>
+        <div class="cuore ms-2 d-none d-lg-inline">
+          <a href="#" class="bg-transparent ms-2 add-playlist">
+            <i class="bi bi-heart"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-6 flex-column progress-bar">
+        <div class="player-controls d-none d-lg-inline">
+          <button class="KVKoQ3u4JpKTvSSFtd6J" role="switch" aria-checked="false"
+            aria-label="Abilita riproduzione casuale" data-testid="control-button-shuffle" style="--button-size: 32px"
+            aria-expanded="true" data-context-menu-open="true">
+            <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon"
+              class="Svg-sc-ytk21e-0 gQUQL" fill="white">
               <path
-                d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z"></path>
-              <path d="M13 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-1-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                d="M13.151.922a.75.75 0 1 0-1.06 1.06L13.109 3H11.16a3.75 3.75 0 0 0-2.873 1.34l-6.173 7.356A2.25 2.25 0 0 1 .39 12.5H0V14h.391a3.75 3.75 0 0 0 2.873-1.34l6.173-7.356a2.25 2.25 0 0 1 1.724-.804h1.947l-1.017 1.018a.75.75 0 0 0 1.06 1.06L15.98 3.75 13.15.922zM.391 3.5H0V2h.391c1.109 0 2.16.49 2.873 1.34L4.89 5.277l-.979 1.167-1.796-2.14A2.25 2.25 0 0 0 .39 3.5z">
+              </path>
+              <path
+                d="m7.5 10.723.98-1.167.957 1.14a2.25 2.25 0 0 0 1.724.804h1.947l-1.017-1.018a.75.75 0 1 1 1.06-1.06l2.829 2.828-2.829 2.828a.75.75 0 1 1-1.06-1.06L13.109 13H11.16a3.75 3.75 0 0 1-2.873-1.34l-.787-.938z">
+              </path>
             </svg>
           </button>
-          <div
-            class="volume-bar ExuDUBJ7bk8vT6INnm9F row d-none d-lg-flex"
-            data-testid="volume-bar"
-            dir="ltr"
-            style="--button-size: 32px; --slider-width: 100%">
-            <button
-              class="volume-bar__icon-button control-button col-2"
-              aria-label="Disattiva audio"
-              aria-describedby="volume-icon"
-              data-testid="volume-bar-toggle-mute-button">
-              <svg
-                role="presentation"
-                height="16"
-                width="16"
-                aria-hidden="true"
-                aria-label="Volume alto"
-                id="volume-icon"
-                viewBox="0 0 16 16"
-                data-encore-id="icon"
-                class="Svg-sc-ytk21e-0 gQUQL"
-                fill="white">
-                <path
-                  d="M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.642 3.642 0 0 1-1.33-4.967 3.639 3.639 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.139 2.139 0 0 0 0 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 0 1 0 4.88z"></path>
-                <path d="M11.5 13.614a5.752 5.752 0 0 0 0-11.228v1.55a4.252 4.252 0 0 1 0 8.127v1.55z"></path>
-              </svg>
-            </button>
-            <div class="volume-bar__slider-container col-8 pt-2">
-              <div class="p1ULRzPc4bD8eQ4T_wyp DFtdzavKSbEhwKYkPTa6">
-                <label class="hidden-visually"
-                  ><input class="volume" type="range" min="0" max="1" step="0.1" value="1"
-                /></label>
-                <div class="TywOcKZEqNynWecCiATc" data-testid="progress-bar" style="--progress-bar-transform: 100%">
-                  <div class="NoOAOv6U6vtqj_ybS1Cd" data-testid="progress-bar-background">
-                    <div class="w699O0LgQRghXyl3bs9u">
-                      <div class="epWhU7hHGktzlO_dop6z"></div>
-                    </div>
-                    <div class="Vis45PPawTyED7Lt2_LI"></div>
+          <button class="fn72ari9aEmKo4JcwteT" aria-label="Indietro" data-testid="control-button-skip-back"
+            style="--button-size: 32px" aria-expanded="true" data-context-menu-open="true">
+            <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon"
+              class="Svg-sc-ytk21e-0 gQUQL" fill="white">
+              <path
+                d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z">
+              </path>
+            </svg>
+          </button>
+          <button id="play-button" data-testid="play-button2" aria-label="Riproduci Rock Classics"
+            data-encore-id="buttonPrimary" class="Button-sc-qlcn5g-0 eHhJDl play-button2">
+            <span class="ButtonInner-sc-14ud5tc-0 dpREpp encore-bright-accent-set"><span aria-hidden="true"
+                class="IconWrapper__Wrapper-sc-1hf1hjl-0 fSnHJ"><svg role="img" height="22" width="22"
+                  aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw p-1">
+                  <path
+                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z">
+                  </path>
+                </svg></span></span>
+          </button>
+          <button class="mnipjT4SLDMgwiDCEnRC" aria-label="Avanti" data-testid="control-button-skip-forward"
+            style="--button-size: 32px" aria-expanded="true" data-context-menu-open="true">
+            <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon"
+              class="Svg-sc-ytk21e-0 gQUQL" fill="white">
+              <path
+                d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z">
+              </path>
+            </svg>
+          </button>
+          <button class="Vz6yjzttS0YlLcwrkoUR" role="checkbox" aria-checked="false" aria-label="Abilita ripetizione"
+            data-testid="control-button-repeat" style="--button-size: 32px" aria-expanded="true"
+            data-context-menu-open="true">
+            <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon"
+              class="Svg-sc-ytk21e-0 gQUQL" fill="white">
+              <path
+                d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l1.018 1.018a.75.75 0 1 1-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 1 1 1.06 1.06L9.811 12h2.439a2.25 2.25 0 0 0 2.25-2.25v-5a2.25 2.25 0 0 0-2.25-2.25h-8.5A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12H5v1.5H3.75A3.75 3.75 0 0 1 0 9.75v-5z">
+              </path>
+            </svg>
+          </button>
+        </div>
+        <div class="progress"></div>
+      </div>
+      <div class="col-3 flex-end audio-controls">
+        <button
+          class="Button-sc-1dqy6lx-0 ePIdkV KAZD28usA1vPz5GVpm63 ZMXGDTbwxKJhbmEDZlYy Xmv2oAnTB85QE4sqbK00 d-none d-lg-inline"
+          data-testid="lyrics-button" data-active="false" aria-label="Lyrics" data-encore-id="buttonTertiary"
+          aria-expanded="true" data-context-menu-open="true">
+          <span aria-hidden="true" class="IconWrapper__Wrapper-sc-16usrgb-0 jyHIqB"><svg role="img" height="16"
+              width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"
+              fill="white">
+              <path
+                d="M13.426 2.574a2.831 2.831 0 0 0-4.797 1.55l3.247 3.247a2.831 2.831 0 0 0 1.55-4.797zM10.5 8.118l-2.619-2.62A63303.13 63303.13 0 0 0 4.74 9.075L2.065 12.12a1.287 1.287 0 0 0 1.816 1.816l3.06-2.688 3.56-3.129zM7.12 4.094a4.331 4.331 0 1 1 4.786 4.786l-3.974 3.493-3.06 2.689a2.787 2.787 0 0 1-3.933-3.933l2.676-3.045 3.505-3.99z">
+              </path>
+            </svg></span>
+        </button>
+        <button class="Button-sc-1dqy6lx-0 ePIdkV KAZD28usA1vPz5GVpm63 d-none d-lg-inline"
+          data-testid="control-button-queue" data-active="false" aria-label="Coda" data-encore-id="buttonTertiary"
+          aria-expanded="false" data-context-menu-open="true">
+          <span aria-hidden="true" class="IconWrapper__Wrapper-sc-16usrgb-0 jyHIqB"><svg role="img" height="16"
+              width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL"
+              fill="white">
+              <path
+                d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 0 1 3.5 1h9a2.5 2.5 0 0 1 0 5h-9A2.5 2.5 0 0 1 1 3.5zm2.5-1a1 1 0 0 0 0 2h9a1 1 0 1 0 0-2h-9z">
+              </path>
+            </svg></span>
+        </button>
+        <button class="control-button INitzTSjokOMEJOc6P2H" aria-label="Connetti a un dispositivo" aria-expanded="false"
+          id="device-picker-icon-button">
+          <svg role="presentation" height="16" width="16" aria-hidden="true" class="Svg-sc-ytk21e-0 gQUQL"
+            viewBox="0 0 16 16" data-encore-id="icon" fill="white">
+            <path
+              d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z">
+            </path>
+            <path d="M13 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-1-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+          </svg>
+        </button>
+        <div class="volume-bar ExuDUBJ7bk8vT6INnm9F row d-none d-lg-flex" data-testid="volume-bar" dir="ltr"
+          style="--button-size: 32px; --slider-width: 100%">
+          <button class="volume-bar__icon-button control-button col-2" aria-label="Disattiva audio"
+            aria-describedby="volume-icon" data-testid="volume-bar-toggle-mute-button">
+            <svg role="presentation" height="16" width="16" aria-hidden="true" aria-label="Volume alto" id="volume-icon"
+              viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 gQUQL" fill="white">
+              <path
+                d="M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.642 3.642 0 0 1-1.33-4.967 3.639 3.639 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.139 2.139 0 0 0 0 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 0 1 0 4.88z">
+              </path>
+              <path d="M11.5 13.614a5.752 5.752 0 0 0 0-11.228v1.55a4.252 4.252 0 0 1 0 8.127v1.55z"></path>
+            </svg>
+          </button>
+          <div class="volume-bar__slider-container col-8 pt-2">
+            <div class="p1ULRzPc4bD8eQ4T_wyp DFtdzavKSbEhwKYkPTa6">
+              <label class="hidden-visually"><input class="volume" type="range" min="0" max="1" step="0.1"
+                  value="1" /></label>
+              <div class="TywOcKZEqNynWecCiATc" data-testid="progress-bar" style="--progress-bar-transform: 100%">
+                <div class="NoOAOv6U6vtqj_ybS1Cd" data-testid="progress-bar-background">
+                  <div class="w699O0LgQRghXyl3bs9u">
+                    <div class="epWhU7hHGktzlO_dop6z"></div>
                   </div>
-                  <div style="width: 100%"></div>
+                  <div class="Vis45PPawTyED7Lt2_LI"></div>
                 </div>
+                <div style="width: 100%"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"></script>
-    <script src="./assets/js/albumScript.js"></script>
-  </body>
+  <!--Aside di sinistra che compare in mobile-->
+  <div class="container-fluid py-2 darker position-absolute bottom-0 d-md-none">
+    <div id="searchDiv2" style="display: none">
+      <input type="text" id="searchInput" placeholder="Cerca..." />
+    </div>
+    <div class="d-flex justify-content-center">
+      <ul class="d-flex m-0 p-0">
+        <li class="px-5">
+          <a class="album-duration small d-flex flex-column align-items-center" href="index.html"><svg height="25"
+              width="30" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw home-active-icon" viewBox="0 0 24 24"
+              data-encore-id="icon" fill="white">
+              <path
+                d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z">
+              </path>
+            </svg>
+            <span>Home</span></a>
+        </li>
+        <li class="px-5">
+          <a class="album-duration small d-flex flex-column align-items-center" href="#" onclick="showSearch()">
+            <svg height="25" width="30" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw search-icon" viewBox="0 0 24 24"
+              data-encore-id="icon" fill="white">
+              <path
+                d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z">
+              </path>
+            </svg><span>Cerca</span>
+          </a>
+        </li>
+        <li class="px-5">
+          <a class="album-duration small d-flex flex-column align-items-center" href="#">
+            <svg role="img" height="25" width="30" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw collection-icon"
+              viewBox="0 0 24 24" data-encore-id="icon" fill="white">
+              <path
+                d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z">
+              </path>
+            </svg><span>La tua libreria</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/albumScript.js"></script>
+</body>
+
 </html>
