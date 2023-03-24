@@ -19,7 +19,7 @@ searchInput.addEventListener("keydown", async function (event) {
       if (data) {
         const firstResult = data.data[0];
         if (searchText.toLowerCase() === firstResult.artist.name.toLowerCase()) {
-          window.location.href = `artist.html?id=${firstResult.artist.id}`;
+          window.location.href = `artist.html?id=${firstResult.artist.name}`;
         } else if (searchText.toLowerCase() === firstResult.album.title.toLowerCase()) {
           window.location.href = `album.html?id=${firstResult.album.id}`;
         } else if (
@@ -43,18 +43,35 @@ searchInput.addEventListener("keydown", async function (event) {
 
 window.onload = async () => {
   if (selectedId) {
-    // const titoloAlbum = document.querySelector("#albumNome");
-    // const artistaAlbum = document.querySelector("#nomeArtistaAlbum");
-    // const durataAlbum = document.querySelector("#durata");
+    const nomeArtista = document.querySelector("#nomeArtista");
+    const imgArtista = document.querySelector("#imgArtista");
+    // const numeroFans = document.querySelector("#numeroFans");
+    const containerPopolari = document.querySelector("#containerPopolari");
     try {
-      const res = await fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + selectedId);
+      const res = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${selectedId}`);
       const artistData = await res.json();
       console.log(artistData);
 
       // const { title } = albumData;
-      //   titoloAlbum.innerText = albumData.title;
-      //   artistaAlbum.innerText = albumData.artist.name;
-      //   durataAlbum.innerText = albumData.duration;
+      nomeArtista.innerText = artistData.data[0].artist.name;
+      imgArtista.src = artistData.data[0].artist.picture_big;
+      for (let i = 0; i < 5; i++) {
+        const tracciaPopolare = document.createElement("div");
+        tracciaPopolare.innerHTML = `
+        <div role="button" class="align-items-center row mb-4 selected py-1">
+        <div class="col-6 d-flex align-items-center">
+          <p class="album-duration me-3 mb-0">${i + 1}</p>
+          <img class="me-3" src="${artistData.data[i].artist.picture_small}" width="15%" />
+          <p class="mb-0">${artistData.data[i].title}</p>
+        </div>
+        <div class="album-duration col-3">
+          <p class="mb-0">Rank:${artistData.data[i].rank}</p>
+        </div>
+        <div class="col-3 album-duration">${artistData.data[i].duration}s</div>
+      </div>`;
+        containerPopolari.appendChild(tracciaPopolare);
+      }
+      // numeroFans.innerText = artistData.nb_fan;
     } catch (err) {
       alert("ERROR: " + err.message);
     }
