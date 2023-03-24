@@ -48,7 +48,7 @@ searchInput.addEventListener("keydown", async function (event) {
         ) {
           const card = document.createElement("div");
           card.innerHTML += `
-          <div class="card" style="width: 18rem;">
+          <div class="card bg-secondary" style="width: 18rem;">
           <img src="${songs.data[0].album.cover_medium}" class="card-img-top" alt="..."/>
           <div class="card-body">
             <h5 class="card-title">${songs.data[0].title_short}</h5>
