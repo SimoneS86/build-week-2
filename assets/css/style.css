@@ -24,6 +24,22 @@ a {
 
 /*Prima Aside (sinistra)*/
 
+#searchInput {
+  background-color: #282828;
+  border: none;
+  border-radius: 20px;
+  color: #b3b3b3;
+  font-size: 16px;
+  padding: 6px 12px;
+  width: 150px;
+  margin-top: 7px;
+}
+
+#searchInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #1db954;
+}
+
 .tendina {
   font-size: larger;
   font-weight: bold;
@@ -243,7 +259,7 @@ h5 {
   height: 40vh;
 }
 
-.box{
+.box {
   bottom: 40px;
 }
 
@@ -379,8 +395,11 @@ h5 {
   left: 0;
 }
 
-.volume{
+.volume {
   width: 60px;
+}
+input[type="range"] {
+  accent-color: rgba(255, 255, 255, 0.438);
 }
 
 .audio-controls {
